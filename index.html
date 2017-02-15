@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- import html template -->
+    <link rel="import" href="template/navbar_component.html">
     <!-- import css -->
     <link rel="stylesheet" href="css/objects_presentation.css" type="text/css">
     <!-- import javascript -->
+    <script src="js/indexFunctions.js"></script>
+
     <title>App Web & Cloud</title>
 </head>
 <body>
@@ -25,22 +29,14 @@
         </div>
     </nav>
 
-   <div class="polaroid_table">
-       <div class="polaroid">
-           <h2>The Fork Milano</h2>
-           <p>The fork si trova a Milano in via pippo affianco la famosa chiesa</p>
-       </div>
-
-       <div class="polaroid">
-           <h2>The Fork Torino</h2>
-           <p>The fork si trova a Torino in via pippo affianco la famosa chiesa</p>
-       </div>
-
-       <div class="polaroid">
-           <h2>The Fork Venezia</h2>
-           <p>The fork si trova a Venezia in via pippo affianco la famosa chiesa</p>
-       </div>
-   </div>
+    <div class="polaroid_table">
+        <template id="polaroid_template">
+           <div class="polaroid">
+               <h2></h2>
+               <p></p>
+            </div>
+        </template>
+    </div>
 
     <footer>
         <div class="footer_wrapper">
@@ -52,6 +48,8 @@
             <a href="login_resturant.html">Accedi area ristoranti</a>
         </div>
     </footer>
-
+<script>
+    generatePolaroid();
+</script>
 </body>
 </html>

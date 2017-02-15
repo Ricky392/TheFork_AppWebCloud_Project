@@ -26,9 +26,10 @@
     float: left;
     margin: 5px;
     padding: 15px;
-    max-width: 300px;
-    height: 300px;
+    width: 300px;
+    height: 200px;
     border: 1px solid black;
+    border-radius: 4px;
 }
 
 .footer_wrapper {
