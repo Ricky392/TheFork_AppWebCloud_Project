@@ -3,6 +3,10 @@
     float: left;
 }
 
+.nav_title>a{
+    text-decoration: none;
+}
+
 .nav_link{
     float: right;
     list-style: none;
@@ -13,10 +17,15 @@
     margin: 10px;
 }
 
+.nav_link>li>a{
+    text-decoration: none;
+}
+
 .navbar{
     width: 90%;
     clear: both;
     margin: 0 auto;
+    background: aquamarine;
 }
 
 
@@ -97,13 +106,29 @@
     border-radius: 4px;
 }
 
+.bookBtn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    float: right;
+}
+
+footer{
+    clear:both;
+    width: 100%;
+}
+
 .footer_wrapper {
     width: 80%;
     margin: 0 auto;
     text-align: center;
 }
 
-footer{
-    clear:both;
-    width: 100%;
+.footer_wrapper>a{
+    text-decoration: none;
 }

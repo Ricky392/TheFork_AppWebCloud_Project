@@ -61,13 +61,38 @@
                 <a href="#">The Grill</a>
             </div>
         </div>
+
+        <div class="dropdown">
+            <button onclick="displayElements('typeDropdown')" class="dropbtn">Tipologia ristorante</button>
+            <div id="typeDropdown" class="dropdown-content">
+                <input type="text" placeholder="Cerca tipologia ristorante..." id="typeInput" class="searchInput" onkeyup="filterFunction('typeDropdown','typeInput')">
+                <a href="#">Vegano</a>
+                <a href="#">Cucina creativa</a>
+                <a href="#">Sushi</a>
+                <a href="#">Pizzeria</a>
+                <a href="#">Esotico</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button onclick="displayElements('numberDropdown')" class="dropbtn">Capienza ristorante</button>
+            <div id="numberDropdown" class="dropdown-content">
+                <a href="#">Meno di 50</a>
+                <a href="#">Compreso tra 50 e 100</a>
+                <a href="#">Più di 100</a>
+            </div>
+        </div>
+
     </div>
+
+
 
     <div class="polaroid_table">
         <template id="polaroid_template">
            <div class="polaroid">
                <h2></h2>
                <p></p>
+               <a href="#" class="bookBtn">PRENOTA</a>
             </div>
         </template>
     </div>
