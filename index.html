@@ -25,8 +25,7 @@
             <ul class="nav_link">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="chi_siamo.html">Chi siamo</a></li>
-                <li><a href="dove_siamo.html">Dove Siamo</a></li>
-                <li><a href="prenota.html">Prenota</a></li>
+                <li><a href="index.html">Prenota</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </div>
@@ -34,60 +33,62 @@
 
     <!-- PAGE CONTENT -->
 
-    <div class="filters">
-        <p>
-            Cerca il tuo ristorante preferito
-        </p>
-        <div class="dropdown">
-            <button onclick="displayElements('cityDropdown')" class="dropbtn">Città</button>
-            <div id="cityDropdown" class="dropdown-content">
-                <input type="text" placeholder="Cerca città..." id="cityInput" class="searchInput" onkeyup="filterFunction('cityDropdown','cityInput')">
-                <a href="#">Milano</a>
-                <a href="#">Genova</a>
-                <a href="#">Firenze</a>
-                <a href="#">Palermo</a>
-                <a href="#">Venezia</a>
-                <a href="#">Trieste</a>
-                <a href="#">Bologna</a>
+    <div class="page_content">
+
+        <h1 class="page_title">La Forchetta</h1>
+        <h4 class="page_title">Prenotazioni ristoranti on-line</h4>
+
+        <div class="filters">
+            <p>
+                Cerca il tuo ristorante preferito
+            </p>
+            <div class="dropdown">
+                <button onclick="displayElements('cityDropdown')" class="dropbtn">Città</button>
+                <div id="cityDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Cerca città..." id="cityInput" class="searchInput" onkeyup="filterFunction('cityDropdown','cityInput')">
+                    <a href="#">Milano</a>
+                    <a href="#">Genova</a>
+                    <a href="#">Firenze</a>
+                    <a href="#">Palermo</a>
+                    <a href="#">Venezia</a>
+                    <a href="#">Trieste</a>
+                    <a href="#">Bologna</a>
+                </div>
             </div>
+
+            <div class="dropdown">
+                <button onclick="displayElements('nameDropdown')" class="dropbtn">Nome ristorante</button>
+                <div id="nameDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Cerca nome ristorante..." id="nameInput" class="searchInput" onkeyup="filterFunction('nameDropdown','nameInput')">
+                    <a href="#">Muolin Rouge</a>
+                    <a href="#">La Forchetta</a>
+                    <a href="#">The Grill</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="displayElements('typeDropdown')" class="dropbtn">Tipologia ristorante</button>
+                <div id="typeDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Cerca tipologia ristorante..." id="typeInput" class="searchInput" onkeyup="filterFunction('typeDropdown','typeInput')">
+                    <a href="#">Vegano</a>
+                    <a href="#">Cucina creativa</a>
+                    <a href="#">Sushi</a>
+                    <a href="#">Pizzeria</a>
+                    <a href="#">Esotico</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="displayElements('numberDropdown')" class="dropbtn">Capienza ristorante</button>
+                <div id="numberDropdown" class="dropdown-content">
+                    <a href="#">Meno di 50</a>
+                    <a href="#">Compreso tra 50 e 100</a>
+                    <a href="#">Più di 100</a>
+                </div>
+            </div>
+
         </div>
 
-        <div class="dropdown">
-            <button onclick="displayElements('nameDropdown')" class="dropbtn">Nome ristorante</button>
-            <div id="nameDropdown" class="dropdown-content">
-                <input type="text" placeholder="Cerca nome ristorante..." id="nameInput" class="searchInput" onkeyup="filterFunction('nameDropdown','nameInput')">
-                <a href="#">Muolin Rouge</a>
-                <a href="#">La Forchetta</a>
-                <a href="#">The Grill</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button onclick="displayElements('typeDropdown')" class="dropbtn">Tipologia ristorante</button>
-            <div id="typeDropdown" class="dropdown-content">
-                <input type="text" placeholder="Cerca tipologia ristorante..." id="typeInput" class="searchInput" onkeyup="filterFunction('typeDropdown','typeInput')">
-                <a href="#">Vegano</a>
-                <a href="#">Cucina creativa</a>
-                <a href="#">Sushi</a>
-                <a href="#">Pizzeria</a>
-                <a href="#">Esotico</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button onclick="displayElements('numberDropdown')" class="dropbtn">Capienza ristorante</button>
-            <div id="numberDropdown" class="dropdown-content">
-                <a href="#">Meno di 50</a>
-                <a href="#">Compreso tra 50 e 100</a>
-                <a href="#">Più di 100</a>
-            </div>
-        </div>
-
-    </div>
-
-
-
-    <div class="polaroid_table">
         <template id="polaroid_template">
            <div class="polaroid">
                <h2></h2>
@@ -98,14 +99,15 @@
     </div>
 
     <!-- FOOTER BAR -->
-    <footer>
+    <footer class="">
         <div class="footer_wrapper">
-            <a href="index.html">Home</a>
-            <a href="chi_siamo.html">Chi siamo</a>
-            <a href="dove_siamo.html">Dove Siamo</a>
-            <a href="prenota.html">Prenota</a>
-            <a href="login_user.html">Accedi area Clienti</a>
-            <a href="login_resturant.html">Accedi area Ristoranti</a>
+            <ul class="footer_link">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chi_siamo.html">Chi siamo</a></li>
+                <li><a href="index.html">Prenota</a></li>
+                <li><a href="login_user.html">Accedi area Clienti</a></li>
+                <li><a href="login_resturant.html">Accedi area Ristoranti</a></li>
+            </ul>
         </div>
     </footer>
 <script>
