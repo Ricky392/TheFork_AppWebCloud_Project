@@ -12,7 +12,7 @@
     <script src="js/indexFunctions.js"></script>
     <script src="js/filter_functions.js"></script>
 
-    <title>La Forchetta</title>
+    <title>La Forchetta - Dove Siamo</title>
 </head>
 <body>
 
@@ -36,38 +36,28 @@
 
     <div class="filters">
         <p>
-            Cerca il tuo ristorante preferito
+            Cerca il tuo ristorante
         </p>
         <div class="dropdown">
-            <button onclick="displayElements('cityDropdown')" class="dropbtn">Città</button>
-            <div id="cityDropdown" class="dropdown-content">
-                <input type="text" placeholder="Cerca città..." id="cityInput" class="searchInput" onkeyup="filterFunction('cityDropdown','cityInput')">
-                <a href="#">Milano</a>
-                <a href="#">Genova</a>
-                <a href="#">Firenze</a>
-                <a href="#">Palermo</a>
-                <a href="#">Venezia</a>
-                <a href="#">Trieste</a>
-                <a href="#">Bologna</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button onclick="displayElements('nameDropdown')" class="dropbtn">Nome ristorante</button>
-            <div id="nameDropdown" class="dropdown-content">
-                <input type="text" placeholder="Cerca nome ristorante..." id="nameInput" class="searchInput" onkeyup="filterFunction('nameDropdown','nameInput')">
-                <a href="#">Muolin Rouge</a>
-                <a href="#">La Forchetta</a>
-                <a href="#">The Grill</a>
+            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                <a href="#about">About</a>
+                <a href="#base">Base</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <a href="#custom">Custom</a>
+                <a href="#support">Support</a>
+                <a href="#tools">Tools</a>
             </div>
         </div>
     </div>
 
     <div class="polaroid_table">
         <template id="polaroid_template">
-           <div class="polaroid">
-               <h2></h2>
-               <p></p>
+            <div class="polaroid">
+                <h2></h2>
+                <p></p>
             </div>
         </template>
     </div>
@@ -83,8 +73,10 @@
             <a href="login_resturant.html">Accedi area Ristoranti</a>
         </div>
     </footer>
-<script>
-    generatePolaroid();
-</script>
+
+    <script>
+        generatePolaroid();
+    </script>
+
 </body>
 </html>
