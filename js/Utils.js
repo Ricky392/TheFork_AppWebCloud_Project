@@ -19,8 +19,8 @@ function loadUsersData() {
     fetch(url).then(function(response) {
         return response.json();
     }).then(function(data) {
-        console.log(data);
-        localStorage.setItem('usersList', JSON.stringify(data));
+        if(localStorage.getItem('usersList') == null)
+            localStorage.setItem('usersList', JSON.stringify(data));
     }).catch(function() {
         console.log("Error");
     });
@@ -31,8 +31,8 @@ function loadResturantsData() {
     fetch(url).then(function(response) {
         return response.json();
     }).then(function(data) {
-        console.log(data);
-        localStorage.setItem('resturantsList', JSON.stringify(data));
+        if(localStorage.getItem('resturantsList') == null)
+            localStorage.setItem('resturantsList', JSON.stringify(data));
     }).catch(function() {
         console.log("Error");
     });

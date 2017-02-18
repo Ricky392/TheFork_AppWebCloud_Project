@@ -59,7 +59,11 @@ function registration() {
     }
     if(!found){
         //possiamo inserire il nuovo utente
-        var user = '{"name": "'+name+'", "surname": "'+surname+'", "email": "'+email+'", "password": "'+hashCode(password)+'"}';
+        var newUser = {"name": name, "surname": surname, "email": email, "password": hashCode(password)};
+        console.log(newUser);
+        parsedJSONUsersList.users.push(newUser);
+        console.log(parsedJSONUsersList);
+        localStorage.setItem('usersList', JSON.stringify(parsedJSONUsersList));
     }
     else {
         //email già presente

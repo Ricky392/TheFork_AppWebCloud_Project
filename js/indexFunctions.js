@@ -4,8 +4,8 @@
 
 function generatePolaroid() {
     var resturantsList = localStorage.getItem('resturantsList');
-    var parsedJSONResturantList = JSON.parse(resturantsList);
-    var resturants = parsedJSONResturantList.resturants;
+    var parsedJSONResturantsList = JSON.parse(resturantsList);
+    var resturants = parsedJSONResturantsList.resturants;
 
     var template = document.querySelector('#polaroid_template');
     for (var i = 0; i < resturants.length; i++) {
