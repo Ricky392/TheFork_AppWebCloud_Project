@@ -7,14 +7,12 @@
     <!-- import css -->
     <link rel="stylesheet" href="css/objects_presentation.css" type="text/css">
     <!-- import javascript -->
-    <script src="js/indexFunctions.js"></script>
-    <script src="js/filter_functions.js"></script>
     <script src="js/Utils.js"></script>
-    <script src="js/personal_areaFunctions.js"></script>
+    <script src="js/registrationFunctions.js"></script>
 
-    <title>La Forchetta - Area clienti</title>
+    <title>La Forchetta - Registrazione cliente</title>
 </head>
-<body onload="checkCookie()">
+<body onload="">
 
 <!-- NAVIGATION BAR -->
 <nav>
@@ -34,15 +32,22 @@
 <!-- PAGE CONTENT -->
 
 <div class="page_content">
-
-    <h1 class="page_title">Pagina Personale</h1>
-
-    <p id="name"></p>
-    <p id="surname"></p>
-    <p id="email"></p>
-    <button onclick="deleteCookie()">Esci</button>
-
+    <h1 class="page_title">Registrazione utenti</h1>
+    <div class="login_forms">
+        <!-- USER LOGIN -->
+        <div class="login">
+            <p>Completa il modulo per effettuare la registrazione</p>
+            <form name="registrationForm" method="get" onsubmit="return checkRegistrationForm();">
+                <input type="text" name="name" placeholder="Inserisci il tuo nome"></br>
+                <input type="text" name="surname" placeholder="Inserisci il tuo cognome"></br>
+                <input type="email" name="email" placeholder="Inserisci email"></br>
+                <input type="password" name="password" placeholder="Inserisci password"></br>
+                <input type="submit" value="Registrati">
+            </form>
+        </div>
+    </div>
 </div>
+
 
 <!-- FOOTER BAR -->
 <footer class="">
@@ -55,8 +60,6 @@
         </ul>
     </div>
 </footer>
-<script>
-    fetchUserData();
-</script>
+
 </body>
 </html>

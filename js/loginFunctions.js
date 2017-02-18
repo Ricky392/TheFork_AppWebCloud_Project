@@ -5,7 +5,7 @@
 var email;
 var password;
 
-function checkForm() {
+function checkLoginForm() {
 
     email    = document.loginForm.email.value;
     password = document.loginForm.password.value;
