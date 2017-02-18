@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2463344-09fc-408e-b36c-b819cdc0f8ef" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/edit_user.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/users.json" afterPath="$PROJECT_DIR$/data/users.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Utils.js" afterPath="$PROJECT_DIR$/js/Utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/indexFunctions.js" afterPath="$PROJECT_DIR$/js/indexFunctions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/registrationFunctions.js" afterPath="$PROJECT_DIR$/js/registrationFunctions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/loginFunctions.js" afterPath="$PROJECT_DIR$/js/loginFunctions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/personal_areaFunctions.js" afterPath="$PROJECT_DIR$/js/personal_areaFunctions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/personal_area.html" afterPath="$PROJECT_DIR$/personal_area.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registration.html" afterPath="$PROJECT_DIR$/registration.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,8 +29,8 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="39" column="86" lean-forward="false" selection-start-line="39" selection-start-column="86" selection-end-line="39" selection-end-column="86" />
+            <state relative-caret-position="460">
+              <caret line="39" column="106" lean-forward="false" selection-start-line="39" selection-start-column="106" selection-end-line="39" selection-end-column="106" />
               <folding />
             </state>
           </provider>
@@ -37,18 +39,38 @@
       <file leaf-file-name="personal_area.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/personal_area.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+            <state relative-caret-position="300">
+              <caret line="43" column="70" lean-forward="false" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginFunctions.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="edit_user.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/edit_user.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="39" column="106" lean-forward="false" selection-start-line="39" selection-start-column="106" selection-end-line="39" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registration.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/registration.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="39" column="116" lean-forward="false" selection-start-line="39" selection-start-column="116" selection-end-line="39" selection-end-column="116" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginFunctions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/loginFunctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="650">
+              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
               </folding>
@@ -59,8 +81,8 @@
       <file leaf-file-name="registrationFunctions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/registrationFunctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="61" column="103" lean-forward="false" selection-start-line="61" selection-start-column="103" selection-end-line="61" selection-end-column="103" />
+            <state relative-caret-position="690">
+              <caret line="71" column="5" lean-forward="true" selection-start-line="49" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
               <folding>
                 <element signature="e#44#86#0" expanded="false" />
               </folding>
@@ -68,10 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Utils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/Utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
+            <state relative-caret-position="-30">
               <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
               <folding>
                 <element signature="n#!!doc;n#hashCode#0" expanded="false" />
@@ -92,34 +114,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter_functions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/filter_functions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="personal_areaFunctions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/personal_areaFunctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="670">
+              <caret line="120" column="31" lean-forward="false" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
               <folding>
-                <element signature="n#!!doc;n#fetchUserData#0" expanded="false" />
+                <element signature="e#0#42#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registration.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/registration.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="39" column="96" lean-forward="false" selection-start-line="39" selection-start-column="96" selection-end-line="39" selection-end-column="96" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -140,8 +142,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -168,15 +170,16 @@
         <option value="$PROJECT_DIR$/dove_siamo.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/prenota.html" />
-        <option value="$PROJECT_DIR$/js/personal_areaFunctions.js" />
-        <option value="$PROJECT_DIR$/personal_area.html" />
-        <option value="$PROJECT_DIR$/js/loginFunctions.js" />
-        <option value="$PROJECT_DIR$/login.html" />
-        <option value="$PROJECT_DIR$/registration.html" />
         <option value="$PROJECT_DIR$/js/indexFunctions.js" />
         <option value="$PROJECT_DIR$/js/registrationFunctions.js" />
         <option value="$PROJECT_DIR$/data/users.json" />
         <option value="$PROJECT_DIR$/js/Utils.js" />
+        <option value="$PROJECT_DIR$/edit_user.html" />
+        <option value="$PROJECT_DIR$/login.html" />
+        <option value="$PROJECT_DIR$/personal_area.html" />
+        <option value="$PROJECT_DIR$/registration.html" />
+        <option value="$PROJECT_DIR$/js/personal_areaFunctions.js" />
+        <option value="$PROJECT_DIR$/js/loginFunctions.js" />
       </list>
     </option>
   </component>
@@ -355,12 +358,12 @@
       <workItem from="1486732548708" duration="451000" />
       <workItem from="1486733067031" duration="83000" />
       <workItem from="1487072874330" duration="9086000" />
-      <workItem from="1487326966711" duration="24129000" />
+      <workItem from="1487326966711" duration="27264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35044000" />
+    <option name="totallyTimeSpent" value="38179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -563,32 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/personal_area.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="39" column="96" lean-forward="false" selection-start-line="39" selection-start-column="96" selection-end-line="39" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/personal_areaFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc;n#fetchUserData#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/filter_functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -607,26 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/loginFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/registrationFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="61" column="103" lean-forward="false" selection-start-line="61" selection-start-column="103" selection-end-line="61" selection-end-column="103" />
-          <folding>
-            <element signature="e#44#86#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/users.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -635,20 +592,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
+    <entry file="file://$PROJECT_DIR$/js/registrationFunctions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="39" column="86" lean-forward="false" selection-start-line="39" selection-start-column="86" selection-end-line="39" selection-end-column="86" />
+        <state relative-caret-position="690">
+          <caret line="71" column="5" lean-forward="true" selection-start-line="49" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
+          <folding>
+            <element signature="e#44#86#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/edit_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="39" column="106" lean-forward="false" selection-start-line="39" selection-start-column="106" selection-end-line="39" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal_area.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="43" column="70" lean-forward="false" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="39" column="116" lean-forward="false" selection-start-line="39" selection-start-column="116" selection-end-line="39" selection-end-column="116" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
+        <state relative-caret-position="-30">
           <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc;n#hashCode#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/personal_areaFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="120" column="31" lean-forward="false" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="39" column="106" lean-forward="false" selection-start-line="39" selection-start-column="106" selection-end-line="39" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/loginFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
           </folding>
         </state>
       </provider>

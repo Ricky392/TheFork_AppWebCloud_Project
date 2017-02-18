@@ -39,9 +39,7 @@ function login() {
         }
         i++;
     }
-    if(!found)
+    if(found == false)
         alert("Username o password non riconosciuta");
-    else
-        document.location.href = "personal_area.html";
 
 }

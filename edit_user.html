@@ -14,7 +14,7 @@
 
     <title>La Forchetta - Area clienti</title>
 </head>
-<body onload="checkCookie()">
+<body onload="fetchUserDataEditMode()">
 
 <!-- NAVIGATION BAR -->
 <nav>
@@ -35,14 +35,15 @@
 
 <div class="page_content">
 
-    <h1 class="page_title">Pagina Personale</h1>
+    <h1 class="page_title">Modifica dati utente</h1>
     <h3>Dati Utente</h3>
-    <p id="name"></p>
-    <p id="surname"></p>
-    <p id="email"></p>
-    <button onclick="window.location.href='edit_user.html'">Modifica i tuoi dati</button>
-    <button onclick="deleteAccount(); window.location.href='index.html'">Cancella account</button>
-    <button onclick="deleteCookie()">Esci</button>
+    <form name="editingForm" method="get" onsubmit="return checkEditingForm();" action="personal_area.html">
+        <input type="text" id="name" name="name" placeholder="Inserisci il tuo nuovo nome"></br>
+        <input type="text" id="surname" name="surname" placeholder="Inserisci il tuo nuovo cognome"></br>
+        <input type="email" id="email" name="email" placeholder="Inserisci una nuova email"></br>
+        <input type="password" id="password" name="password" placeholder="Inserisci nuova password"></br>
+        <input type="submit" value="Completa modifica">
+    </form>
 
 </div>
 
