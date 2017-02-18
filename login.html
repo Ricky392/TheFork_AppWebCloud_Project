@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- import html template -->
-    <link rel="import" href="template/navbar_component.html">
     <!-- import css -->
     <link rel="stylesheet" href="css/objects_presentation.css" type="text/css">
     <!-- import javascript -->
-    <script src="js/indexFunctions.js"></script>
+    <script src="js/Utils.js"></script>
+    <script src="js/loginFunctions.js"></script>
 
     <title>La Forchetta - Login Cliente</title>
 </head>
-<body>
+<body onload="loadUsersData()">
 
     <!-- NAVIGATION BAR -->
     <nav>
@@ -38,7 +37,7 @@
             <!-- USER LOGIN -->
             <div class="login">
                 <p>Sei un Cliente?</p>
-                <form method="get">
+                <form name="loginForm" method="get" onsubmit="checkForm()">
                     <input type="email" name="email" placeholder="Inserisci email"></br>
                     <input type="password" name="password" placeholder="Inserisci password"></br>
                     <input type="submit" value="Accedi">
@@ -48,7 +47,9 @@
                     </br> (Ricordati che per effettuare un ordine devi aver effettuato l'accesso)
                 </p>
             </div>
+        </div>
     </div>
+
 
     <!-- FOOTER BAR -->
     <footer class="">
