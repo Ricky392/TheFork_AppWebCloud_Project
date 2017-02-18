@@ -32,8 +32,44 @@ function loadResturantsData() {
         return response.json();
     }).then(function(data) {
         console.log(data);
-        localStorage.setItem('resturantList', JSON.stringify(data));
+        localStorage.setItem('resturantsList', JSON.stringify(data));
     }).catch(function() {
         console.log("Error");
     });
+}
+
+function setLoginCookie(name, expirationDays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (expirationDays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = "username =" + name + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user = getCookie("username");
+    if (user != "") {
+
+    } else {
+        document.location.href = "login.html";
+    }
+}
+
+function deleteCookie(){
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.location.href = "index.html";
 }

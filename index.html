@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- import html template -->
-    <link rel="import" href="template/navbar_component.html">
     <!-- import css -->
     <link rel="stylesheet" href="css/objects_presentation.css" type="text/css">
     <!-- import javascript -->
@@ -15,7 +13,7 @@
 
     <title>La Forchetta</title>
 </head>
-<body onload="loadResturantsData()">
+<body onload="loadResturantsData();generatePolaroid();">
 
     <!-- NAVIGATION BAR -->
     <nav>
@@ -106,12 +104,9 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="chi_siamo.html">Chi siamo</a></li>
                 <li><a href="index.html">Prenota</a></li>
-                <li><a href="login.html">Accedi area Clienti</a></li>
+                <li><a href="personal_area.html">Accedi area Clienti</a></li>
             </ul>
         </div>
     </footer>
-<script>
-    generatePolaroid();
-</script>
 </body>
 </html>

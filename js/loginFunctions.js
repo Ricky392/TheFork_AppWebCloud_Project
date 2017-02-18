@@ -26,15 +26,22 @@ function checkForm() {
 
 function login() {
     var i=0;
+    var found = false;
     var usersList = localStorage.getItem('usersList');
     var parsedJSONUsersList = JSON.parse(usersList);
+
     while(parsedJSONUsersList.users.length >= i){
         if(parsedJSONUsersList.users[i].email == email && parsedJSONUsersList.users[i].password == hashCode(password)){
             console.log("TROVATA CORRISPONDENZA");
-            alert("TROVATA CORRISPONDENZA");
-            break;
+            setLoginCookie(email,10);
+            alert("Accesso effettuato");
+            found = true;
         }
         i++;
     }
+    if(!found)
+        alert("Username o password non riconosciuta");
+    else
+        document.location.href = "personal_area.html";
 
 }

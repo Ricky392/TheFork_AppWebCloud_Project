@@ -1,43 +1,77 @@
 {
-	"nome":"Muolin Rouge",
-	"tipologia":["cucina creativa","braceria","pizzeria","sushi","pesce"],
-	"via": "piazza durante",
-	"citta":"Milano",
-	"gps":{"lat":45.4886181,"long":9.2237361},
-	"fascia_prezzo": "economico",  
-	"review":3, 
-	"posti":36,
-	"menus":[
+	"resturants":[
 		{
-		"menu":"menu pizza",
-		"antipasti":["patatine","olive fritte"],
-		"primi":[],
-		"secondi":["pizza a scelta"],
-		"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
-		"bevande":["acqua","coca-cola"],
-		"prezzo":17.00,
-		"sconti":[{"tipo":"giorno",
-				"valore":["lunedì","giovedì"],
-				"sconto":0.20
-			},
-			{"tipo":"orario",
-				"valore":["19-21"],
-				"sconto":0.1
-			}]
-		},
+			"nome":"Muolin Rouge",
+			"tipologia":["cucina creativa","braceria","pizzeria","sushi","pesce"],
+			"via": "piazza durante",
+			"citta":"Milano",
+			"gps":{"lat":45.4886181,"long":9.2237361},
+			"fascia_prezzo": "economico",
+			"review":3,
+			"posti":36,
+			"menus":[
 				{
-		"menu":"menu milanese",
-		"antipasti":["polentina con cervo"],
-		"primi":["risotto alla milanese"],
-		"secondi":["cotoletta alla milanese"],
-		"dolci":["barbajada"],
-		"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
-		"bevande":["acqua","coca-cola","caffe"],
-		"prezzo":45.00,
-		"sconti":[{"tipo":"giorno",
-				"valore":["martedì","mercoledì"],
-				"sconto":0.50
-			}]
+					"menu":"menu fast",
+					"antipasti":["patatine","olive fritte"],
+					"primi":[],
+					"secondi":["pizza a scelta"],
+					"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
+					"bevande":["acqua","coca-cola"],
+					"prezzo":17.00,
+					"sconti":[{"tipo":"giorno",
+						"valore":["lunedì","giovedì"],
+						"sconto":0.20
+					},
+						{"tipo":"orario",
+							"valore":["19-21"],
+							"sconto":0.1
+						}]
+				},
+				{
+					"menu":"menu milanese",
+					"antipasti":["polentina con cervo"],
+					"primi":["risotto alla milanese"],
+					"secondi":["cotoletta alla milanese"],
+					"dolci":["barbajada"],
+					"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
+					"bevande":["acqua","coca-cola","caffe"],
+					"prezzo":45.00,
+					"sconti":[{"tipo":"giorno",
+						"valore":["martedì","mercoledì"],
+						"sconto":0.50
+					}]
+				}
+			]
+		},
+
+		{
+			"nome":"La Conchiglia",
+			"tipologia":["pizzeria","pesce"],
+			"via": "via Brennero 33",
+			"citta":"Legnano",
+			"gps":{"lat":45.4886181,"long":9.2237361},
+			"fascia_prezzo": "medio",
+			"review":5,
+			"posti":130,
+			"menus":[
+				{
+					"menu":"menu pizza",
+					"antipasti":["patatine","olive fritte"],
+					"primi":[],
+					"secondi":["pizza a scelta"],
+					"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
+					"bevande":["acqua","coca-cola"],
+					"prezzo":13.00,
+					"sconti":[{"tipo":"giorno",
+						"valore":["martedì","venerdì"],
+						"sconto":0.4
+					},
+						{"tipo":"orario",
+							"valore":["21-23"],
+							"sconto":0.4
+						}]
+				}
+			]
 		}
 	]
 }

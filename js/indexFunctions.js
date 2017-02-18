@@ -1,23 +1,20 @@
 /**
  * Created by ricca on 15/02/2017.
  */
-var arr = [
-    { name:'The Fork USA', country:'USA'},
-    { name:'The Fork Canada', country:'Canada'},
-    { name:'The Fork Germany', country:'Germany'},
-    { name:'The Fork Greece', country:'Greece'}
-];
-
 
 function generatePolaroid() {
+    var resturantsList = localStorage.getItem('resturantsList');
+    var parsedJSONResturantList = JSON.parse(resturantsList);
+    var resturants = parsedJSONResturantList.resturants;
+
     var template = document.querySelector('#polaroid_template');
-    for (var i = 0; i < arr.length; i++) {
-        var resturant = arr[i];
+    for (var i = 0; i < resturants.length; i++) {
+        var resturant = resturants[i];
         var clone = template.content.cloneNode(true);
         var h2 = clone.querySelectorAll('h2');
-        h2[0].innerHTML = resturant.name;
+        h2[0].innerHTML = resturant.nome;
         var p = clone.querySelectorAll('p');
-        p[0].innerHTML = "Country: " + resturant.country;
+        p[0].innerHTML = "Città: " + resturant.citta;
         template.parentNode.appendChild(clone);
     }
 }
