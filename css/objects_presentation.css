@@ -1,24 +1,17 @@
 
-.nav_title{
+.nav_title a{
     float: left;
-}
-
-.nav_title>a{
     text-decoration: none;
 }
 
 .nav_link{
     float: right;
-    list-style: none;
 }
 
-.nav_link>li{
-    float: left;
-    margin: 10px;
-}
-
-.nav_link>li>a{
+.nav_link a{
     text-decoration: none;
+    margin-right: 20px;
+    color: darkblue;
 }
 
 .navbar{
@@ -26,6 +19,7 @@
     clear: both;
     margin: 0 auto;
     background: aquamarine;
+    padding: 50px;
 }
 
 .page_title{
@@ -91,12 +85,21 @@
 
 .show {display:block;}
 
+.imgExpo{
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .imgExpo{width: 70%;}
+}
+
 /* fine filters presenation */
 
 .page_content{
     clear: both;
     width: 90%;
-    margin: 0 auto;
+    margin: 20px auto 20px;
 }
 
 .polaroid {
@@ -109,7 +112,7 @@
     border-radius: 4px;
 }
 
-.bookBtn{
+.bookBtn {
     background-color: #4CAF50;
     color: white;
     padding: 10px;
@@ -121,47 +124,34 @@
     float: right;
 }
 
-.login_forms{
-    clear: both;
-    margin: 0 auto;
-    width: 50%;
-}
-
 .login{
     float: left;
     margin: 10px;
     padding: 15px;
-    width: 270px;
-    height: 200px;
+    width: 50%;
+    height: 220px;
     border: 1px solid gainsboro;
     border-radius: 4px;
+
+    margin-left: 25%;
 }
 
-footer{
+.login_form input{
+    width: 90%;
+    margin: 5px 0;
+}
+
+.footer{
     clear:both;
-    width: 100%;
-}
-
-.footer_wrapper {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
-    text-align: center;
+    background-color: darkslategray;
+    color: #ffffff;
+    padding: 25px;
 }
 
-.footer_wrapper>a{
+.footer>a{
+    color: white;
     text-decoration: none;
-}
-
-.footer_link{
-    float: left;
-    list-style: none;
-}
-
-.footer_link>li{
-    float: left;
-    margin: 10px;
-}
-
-.footer_link>li>a{
-    text-decoration: none;
+    margin-right: 10px;
 }

@@ -69,7 +69,24 @@ function checkCookie() {
     }
 }
 
+function checkLogin() {
+    var user = getCookie("username");
+    if (user != "") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function deleteCookie(){
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.location.href = "index.html";
+}
+
+function checkIfLogged() {
+    if(checkLogin()){
+        var loginLink = document.getElementById("login_link");
+        loginLink.innerHTML = "Bentornato caro utente";
+    }
+
 }

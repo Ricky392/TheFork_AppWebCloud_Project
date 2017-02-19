@@ -11,7 +11,7 @@
 			"posti":36,
 			"menus":[
 				{
-					"menu":"menu fast",
+					"menu":"menu pizza",
 					"antipasti":["patatine","olive fritte"],
 					"primi":[],
 					"secondi":["pizza a scelta"],
@@ -46,7 +46,7 @@
 
 		{
 			"nome":"La Conchiglia",
-			"tipologia":["pizzeria","pesce"],
+			"tipologia":[,"pizzeria",,"pesce"],
 			"via": "via Brennero 33",
 			"citta":"Legnano",
 			"gps":{"lat":45.4886181,"long":9.2237361},
@@ -63,8 +63,8 @@
 					"bevande":["acqua","coca-cola"],
 					"prezzo":13.00,
 					"sconti":[{"tipo":"giorno",
-						"valore":["martedì","venerdì"],
-						"sconto":0.4
+						"valore":["maertedì","venerdì"],
+						"sconto":0.20
 					},
 						{"tipo":"orario",
 							"valore":["21-23"],
