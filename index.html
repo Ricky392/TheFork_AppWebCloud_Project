@@ -94,6 +94,8 @@
                <h2></h2>
                <p></p>
                <a href="#" class="bookBtn">PRENOTA</a>
+               <a href="#" class="bookBtn">Più informazioni</a>
+
             </div>
         </template>
 
@@ -111,6 +113,49 @@
             <p id="resturant_price"></p> <!-- Fascia di prezzo ristorante -->
             <p id="resturant_vacancy"></p> <!-- posti ristorante -->
             <p id="resturant_menu"></p> <!-- Menu ristorante -->
+        </div>
+    </div>
+
+    <!-- RESTURANT BOOKING WINDOW-->
+    <div class="modal" id="resturant_booking">
+        <div class="modal-content animate">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('resturant_booking').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+            <h3 id="title">LA CONCHIGLIA</h3> <!-- Nome ristorante -->
+            <p id="reservation_name">Nome prenotazione: Pippo</p> <!-- Posizione ristorante -->
+            <p>Numero posti:
+                <select id="reservation_seats">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </p>
+            <p>Giorno Prenotazione:
+                <select id="reservation_day">
+                    <option value="0">Lunedì</option>
+                    <option value="1">Martedì</option>
+                    <option value="2">Mercoledì</option>
+                    <option value="3">Giovedì</option>
+                    <option value="4">Venerdì</option>
+                    <option value="5">Sabato</option>
+                    <option value="6">Domenica</option>
+                </select>
+            </p>
+            <p>Ora Prenotazione:
+                <select id="reservation_hour">
+                    <option value="0">19:00 - 21:00</option>
+                    <option value="1">Dopo le 21:00</option>
+                </select>
+            </p>
+            <a href="#" class="bookBtn">CONFERMA PRENOTAZIONE</a>
         </div>
     </div>
 
