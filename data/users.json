@@ -4,7 +4,21 @@
 			"name":"Riccardo",
 			"surname":"Pagano",
 			"email": "r.pagano392@gmail.com",
-			"password": -1679177315
+			"password": -1679177315,
+			"reservations": [
+				{
+					"resturant": "La Conchiglia",
+					"day": 0,
+					"hour": 1,
+					"seats": 2
+				},
+				{
+					"resturant": "La Conchiglia",
+					"day": 4,
+					"hour": 0,
+					"seats": 4
+				}
+			]
 		}
 	]
 }

@@ -9,6 +9,7 @@ function fetchUserData() {
     var name = document.getElementById("name");
     var surname = document.getElementById("surname");
     var email = document.getElementById("email");
+    var reservationsUl = document.getElementById("reservations");
 
     var i=0;
     var found = false;
@@ -22,7 +23,13 @@ function fetchUserData() {
             surname.innerHTML = "Cognome: " + parsedJSONUsersList.users[i].surname;
             email.innerHTML = "Email di registrazione: " + parsedJSONUsersList.users[i].email;
             reference_email = parsedJSONUsersList.users[i].email;
-
+            var li = document.createElement("li");
+            for(var j=0; j<parsedJSONUsersList.users[i].reservations.length;j++) {
+                var res = parsedJSONUsersList.users[i].reservations[j];
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(res.resturant+", "+getLiteralDay(res.day)+" alle "+getLiteralResHour(res.hour)+" per "+res.seats+" persone;"));
+                reservationsUl.appendChild(li);
+            }
             found = true;
         }
         i++;

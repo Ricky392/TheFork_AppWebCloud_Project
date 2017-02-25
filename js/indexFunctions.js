@@ -6,6 +6,7 @@ function generatePolaroid() {
     var resturantsList = localStorage.getItem('resturantsList');
     var parsedJSONResturantsList = JSON.parse(resturantsList);
     var resturants = parsedJSONResturantsList.resturants;
+
     var i = 0;
     var template = document.querySelector('#polaroid_template');
     while (i < resturants.length) {
@@ -14,7 +15,7 @@ function generatePolaroid() {
         var h2 = clone.querySelectorAll('h2');
         h2[0].innerHTML = resturant.nome;
         var p = clone.querySelectorAll('p');
-        p[0].innerHTML = "Città: " + resturant.citta +"</br></br>Posti Liberi: "+resturant.posti;
+        p[0].innerHTML = "Città: " + resturant.citta +"</br></br>Posti a sedere: "+resturant.posti;
         var a = clone.querySelectorAll('a');
         var nome = resturant.nome;
         a[0].setAttribute("onClick", "bookResturant('"+nome+"');");
@@ -46,7 +47,7 @@ function showResturantDetail(nome) {
             type.innerHTML = "Categoria: "+resturants[i].tipologia;
             position.innerHTML = "situato in "+resturants[i].via+", "+resturants[i].citta;
             price.innerHTML = "Fascia di prezzo "+resturants[i].fascia_prezzo;
-            vacancy.innerHTML = "Posti rimanenti: "+resturants[i].posti;
+            vacancy.innerHTML = "Posti a sedere: "+resturants[i].posti;
             menu.innerHTML = "Menù presenti: ";
             for(var j=0; j<resturants[i].menus.length; j++){
                 menu.innerHTML = resturants[i].menus[j].menu;
@@ -55,14 +56,26 @@ function showResturantDetail(nome) {
     }
 }
 
-function bookResturant(nome) {
+function bookResturant(restName) {
+    var confirmBtn = document.getElementById("confirmBtn");
+    var seats = document.getElementById("reservation_seats");
+    var hour = document.getElementById("reservation_hour");
+    var day = document.getElementById("reservation_day");
     var user = getCookie("username");
     if (user != "") {
         document.getElementById("resturant_booking").style.display= "block";
+        seats.value;
+        day.value;
+        hour.value;
+        confirmBtn.setAttribute("onClick", "confirmPrenotation('"+restName+"','"+user.toString()+"','"+seats.value+"','"+day.value+"','"+hour.value+"');");
         return true;
     } else {
         alert("Devi accedere prima di poter prenotare un ristorante");
         return false;
     }
 
+}
+
+function confirmPrenotation(restName, userName, seats, day, hour) {
+    console.log(restName, userName, seats, day, hour);
 }

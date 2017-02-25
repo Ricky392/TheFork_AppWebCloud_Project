@@ -31,8 +31,10 @@ function loadResturantsData() {
     fetch(url).then(function(response) {
         return response.json();
     }).then(function(data) {
-        if(localStorage.getItem('resturantsList') == null)
+        if(localStorage.getItem('resturantsList') == null) {
             localStorage.setItem('resturantsList', JSON.stringify(data));
+            generateReservationArray();
+        }
     }).catch(function() {
         console.log("Error");
     });
@@ -89,4 +91,39 @@ function checkIfLogged() {
         loginLink.innerHTML = "Bentornato caro utente";
     }
 
+}
+
+function getLiteralDay(index) {
+    switch(index){
+        case 0: return "Lunedì";
+        case 1: return "Martedì";
+        case 2: return "Mercoledì";
+        case 3: return "Giovedì";
+        case 4: return "Venerdì";
+        case 5: return "Sabato";
+        case 6: return "Domenica";
+    }
+}
+
+function getLiteralResHour(index) {
+    switch(index){
+        case 0: return "19:00 - 21:00";
+        case 1: return "Dopo le 21:00";
+    }
+}
+
+function generateReservationArray() {
+    var retJson = {"reservations": []};
+    var resturantsList = localStorage.getItem('resturantsList');
+    var parsedJSONResturantsList = JSON.parse(resturantsList);
+    var resturants = parsedJSONResturantsList.resturants;
+    var i = 0;
+    while (i < resturants.length) {
+        var resturant = resturants[i];
+        var newRest = {"name": resturant.nome, "0": [resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti,],
+            "1": [resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti,]};
+        retJson.reservations.push(newRest);
+        i++;
+    }
+    localStorage.setItem('reservationList', JSON.stringify(retJson));
 }

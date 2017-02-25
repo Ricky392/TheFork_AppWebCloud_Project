@@ -46,7 +46,7 @@
 
 		{
 			"nome":"La Conchiglia",
-			"tipologia":[,"pizzeria",,"pesce"],
+			"tipologia":["pizzeria","pesce"],
 			"via": "via Brennero 33",
 			"citta":"Legnano",
 			"gps":{"lat":45.4886181,"long":9.2237361},
