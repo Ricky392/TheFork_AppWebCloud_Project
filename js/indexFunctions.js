@@ -57,17 +57,10 @@ function showResturantDetail(nome) {
 }
 
 function bookResturant(restName) {
-    var confirmBtn = document.getElementById("confirmBtn");
-    var seats = document.getElementById("reservation_seats");
-    var hour = document.getElementById("reservation_hour");
-    var day = document.getElementById("reservation_day");
     var user = getCookie("username");
     if (user != "") {
         document.getElementById("resturant_booking").style.display= "block";
-        seats.value;
-        day.value;
-        hour.value;
-        confirmBtn.setAttribute("onClick", "confirmPrenotation('"+restName+"','"+user.toString()+"','"+seats.value+"','"+day.value+"','"+hour.value+"');");
+        confirmBtn.setAttribute("onClick", "confirmPrenotation('"+restName+"');");
         return true;
     } else {
         alert("Devi accedere prima di poter prenotare un ristorante");
@@ -76,6 +69,11 @@ function bookResturant(restName) {
 
 }
 
-function confirmPrenotation(restName, userName, seats, day, hour) {
-    console.log(restName, userName, seats, day, hour);
+function confirmPrenotation(restName) {
+    var confirmBtn = document.getElementById("confirmBtn");
+    var seats = document.getElementById("reservation_seats");
+    var hour = document.getElementById("reservation_hour");
+    var day = document.getElementById("reservation_day");
+    var user = getCookie("username");
+    console.log(restName, user.toString(), seats.value, day.value, hour.value);
 }
