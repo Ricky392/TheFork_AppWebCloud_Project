@@ -33,7 +33,11 @@ function login() {
     while(parsedJSONUsersList.users.length >= i){
         if(parsedJSONUsersList.users[i].email == email && parsedJSONUsersList.users[i].password == hashCode(password)){
             console.log("TROVATA CORRISPONDENZA");
-            setLoginCookie(email,10);
+            var nome = parsedJSONUsersList.users[i].name
+            var cog  = parsedJSONUsersList.users[i].surname
+            var username = nome+" "+cog
+            setLoginCookie(email, username,10);
+
             alert("Accesso effettuato");
             found = true;
         }

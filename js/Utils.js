@@ -40,11 +40,12 @@ function loadResturantsData() {
     });
 }
 
-function setLoginCookie(name, expirationDays) {
+function setLoginCookie(email, name, expirationDays) {
     var d = new Date();
     d.setTime(d.getTime() + (expirationDays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
-    document.cookie = "username =" + name + ";" + expires + ";path=/";
+    document.cookie = "username =" + email + ";" + expires + ";path=/";
+    document.cookie = "name =" + name + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {
@@ -120,8 +121,8 @@ function generateReservationArray() {
     var i = 0;
     while (i < resturants.length) {
         var resturant = resturants[i];
-        var newRest = {"name": resturant.nome, "0": [resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti,],
-            "1": [resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti,]};
+        var newRest = {"name": resturant.nome, "f0": [resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti,],
+            "f1": [resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti, resturant.posti,]};
         retJson.reservations.push(newRest);
         i++;
     }

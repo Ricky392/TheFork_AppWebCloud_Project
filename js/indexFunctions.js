@@ -7,6 +7,15 @@ function generatePolaroid() {
     var parsedJSONResturantsList = JSON.parse(resturantsList);
     var resturants = parsedJSONResturantsList.resturants;
 
+    //load resturant data
+    var name = document.getElementById("resturant_name");
+    var type = document.getElementById("resturant_type");
+    var position = document.getElementById("resturant_position");
+    var price = document.getElementById("resturant_price");
+    var vacancy = document.getElementById("resturant_vacancy");
+    var menu = document.getElementById("resturant_menu");
+
+
     var i = 0;
     var template = document.querySelector('#polaroid_template');
     while (i < resturants.length) {
@@ -22,44 +31,55 @@ function generatePolaroid() {
         a[1].setAttribute("onClick", "showResturantDetail('"+nome+"');");
         template.parentNode.appendChild(clone);
         i++;
+
+        name.innerHTML = resturant.nome;
+        type.innerHTML = "Categoria: "+resturant.tipologia;
+        position.innerHTML = "situato in "+resturant.via+", "+resturant.citta;
+        price.innerHTML = "Fascia di prezzo "+resturant.fascia_prezzo;
+        vacancy.innerHTML = "Posti a sedere: "+resturant.posti;
+        menu.innerHTML = "Menù presenti: ";
+        for(var j=0; j<resturant.menus.length; j++){
+            menu.innerHTML = resturant.menus[j].menu;
+        }
     }
 }
 
-function showResturantDetail(nome) {
-    console.log(nome);
+function showResturantDetail(nomeRistorante) {
+
+    //lista prenotazioni
+    var reservationList = localStorage.getItem("reservationList");
+    var parsedJSONReservationlist = JSON.parse(reservationList);
+    var reservations = parsedJSONReservationlist.reservations;
+
+    var reservation_table = document.getElementById("resturant_reservations");
+
+    console.log(nomeRistorante);
     document.getElementById("resturant_detail").style.display= "block";
 
-    //load resturant data
-    var name = document.getElementById("resturant_name");
-    var type = document.getElementById("resturant_type");
-    var position = document.getElementById("resturant_position");
-    var price= document.getElementById("resturant_price");
-    var vacancy = document.getElementById("resturant_vacancy");
-    var menu = document.getElementById("resturant_menu");
+    reservation_table.innerHTML = "";
 
-    var resturantsList = localStorage.getItem('resturantsList');
-    var parsedJSONResturantsList = JSON.parse(resturantsList);
-    var resturants = parsedJSONResturantsList.resturants;
-
-    for(var i=0; i<resturants.length; i++){
-        if(resturants[i].nome == nome){
-            name.innerHTML = resturants[i].nome;
-            type.innerHTML = "Categoria: "+resturants[i].tipologia;
-            position.innerHTML = "situato in "+resturants[i].via+", "+resturants[i].citta;
-            price.innerHTML = "Fascia di prezzo "+resturants[i].fascia_prezzo;
-            vacancy.innerHTML = "Posti a sedere: "+resturants[i].posti;
-            menu.innerHTML = "Menù presenti: ";
-            for(var j=0; j<resturants[i].menus.length; j++){
-                menu.innerHTML = resturants[i].menus[j].menu;
+    for(var j=0; j<reservations.length; j++){
+        if(reservations[j].name == nomeRistorante){
+            var fascia0 = reservations[j].f0;
+            var fascia1 = reservations[j].f1;
+            for(var k=0; k<7; k++){
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(getLiteralDay(k)+" -> 19:00 - 21:00 "+fascia0[k]+" posti liberi | dopo le 21:00 "+fascia1[k]+" posti liberi"));
+                reservation_table.appendChild(li);
             }
         }
     }
+
 }
 
 function bookResturant(restName) {
     var user = getCookie("username");
     if (user != "") {
         document.getElementById("resturant_booking").style.display= "block";
+        var username = document.getElementById("reservation_name");
+        var restName_title = document.getElementById("title");
+        restName_title.innerHTML = restName;
+        username.innerHTML = "Nome prenotazione: "+getCookie("name");
         confirmBtn.setAttribute("onClick", "confirmPrenotation('"+restName+"');");
         return true;
     } else {
