@@ -27,7 +27,7 @@ function fetchUserData() {
             for(var j=0; j<parsedJSONUsersList.users[i].reservations.length;j++) {
                 var res = parsedJSONUsersList.users[i].reservations[j];
                 var li = document.createElement("li");
-                li.appendChild(document.createTextNode(res.resturant+", "+getLiteralDay(res.day)+" alle "+getLiteralResHour(res.hour)+" per "+res.seats+" persone;"));
+                li.appendChild(document.createTextNode(res.resturant+", "+getLiteralDay(Number(res.day))+" alle "+getLiteralResHour(Number(res.hour))+" per "+res.seats+" persone;"));
                 reservationsUl.appendChild(li);
             }
             found = true;
@@ -47,15 +47,15 @@ function fetchUserDataEditMode() {
     var usersList = localStorage.getItem('usersList');
     var parsedJSONUsersList = JSON.parse(usersList);
 
-    while (parsedJSONUsersList.users.length >= i) {
-        if (parsedJSONUsersList.users[i].email == getCookie("username")) {
-            console.log("TROVATA CORRISPONDENZA");
-            name.value = parsedJSONUsersList.users[i].name;
-            surname.value = parsedJSONUsersList.users[i].surname;
-            email.value = parsedJSONUsersList.users[i].email;
-        }
-        i++;
-    }
+    var users = parsedJSONUsersList.users;
+
+    var user = users.filter(function (user) {
+        return user.email === getCookie("username");
+    });
+
+    name.value = user[0].name;
+    surname.value = user[0].surname;
+    email.value = user[0].email;
 }
 
 function checkEditingForm() {

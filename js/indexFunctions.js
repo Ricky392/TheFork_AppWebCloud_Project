@@ -58,17 +58,20 @@ function showResturantDetail(nomeRistorante) {
 
     reservation_table.innerHTML = "";
 
-    for(var j=0; j<reservations.length; j++){
-        if(reservations[j].name == nomeRistorante){
-            var fascia0 = reservations[j].f0;
-            var fascia1 = reservations[j].f1;
-            for(var k=0; k<7; k++){
-                var li = document.createElement("li");
-                li.appendChild(document.createTextNode(getLiteralDay(k)+" -> 19:00 - 21:00 "+fascia0[k]+" posti liberi | dopo le 21:00 "+fascia1[k]+" posti liberi"));
-                reservation_table.appendChild(li);
-            }
-        }
+    //estraggo l'oggetto rappresentate il ristorante giusto
+    var resturant = reservations.filter(function (resturantItem) {
+        return resturantItem.name === nomeRistorante;
+    });
+
+    var fascia0 = resturant[0].f0;
+    var fascia1 = resturant[0].f1;
+    for(var k=0; k<7; k++){
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(getLiteralDay(k)+" -> 19:00 - 21:00 "+fascia0[k]+" posti liberi | dopo le 21:00 "+fascia1[k]+" posti liberi"));
+        reservation_table.appendChild(li);
     }
+
+
 
 }
 
@@ -90,10 +93,52 @@ function bookResturant(restName) {
 }
 
 function confirmPrenotation(restName) {
+
+    //lista prenotazioni
+    var reservationList = localStorage.getItem("reservationList");
+    var parsedJSONReservationlist = JSON.parse(reservationList);
+    var reservations = parsedJSONReservationlist.reservations;
+
+    //lista utenti
+    var usersList = localStorage.getItem("usersList");
+    var parsedJSONUsersList = JSON.parse(usersList);
+    var users = parsedJSONUsersList.users;
+
     var confirmBtn = document.getElementById("confirmBtn");
-    var seats = document.getElementById("reservation_seats");
-    var hour = document.getElementById("reservation_hour");
-    var day = document.getElementById("reservation_day");
+    var seats = document.getElementById("reservation_seats").value;
+    var hour = document.getElementById("reservation_hour").value;
+    var day = document.getElementById("reservation_day").value;
     var user = getCookie("username");
-    console.log(restName, user.toString(), seats.value, day.value, hour.value);
+    console.log(restName, user.toString(), seats, day, hour);
+
+    //estraggo l'oggetto rappresentate il ristorante giusto
+    var resturant = reservations.filter(function (resturantItem) {
+        return resturantItem.name === restName;
+    });
+
+    //modifico la disponibilità di posti in base al giorno e l'orario
+    if(hour == 0){
+        resturant[0].f0[day] = resturant[0].f0[day] - seats;
+    } else if(hour == 1){
+        resturant[0].f1[day] = resturant[0].f1[day] - seats;
+    }
+
+    localStorage.setItem('reservationList', JSON.stringify(parsedJSONReservationlist));
+
+    var userItem = users.filter(function (item) {
+        return item.email === user.toString();
+    });
+
+    var newReservation = {
+        "resturant": restName,
+        "day": day,
+        "hour": hour,
+        "seats": seats
+    };
+    console.log(userItem[0].reservations);
+    userItem[0].reservations.push(newReservation);
+    localStorage.setItem('usersList', JSON.stringify(parsedJSONUsersList));
+
+    alert("Grazie di aver prenotato con La Forchetta");
+    document.getElementById("resturant_booking").style.display= "none";
 }

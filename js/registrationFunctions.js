@@ -59,7 +59,7 @@ function registration() {
     }
     if(!found){
         //possiamo inserire il nuovo utente
-        var newUser = {"name": name, "surname": surname, "email": email, "password": hashCode(password)};
+        var newUser = {"name": name, "surname": surname, "email": email, "password": hashCode(password), reservations: []};
         console.log(newUser);
         parsedJSONUsersList.users.push(newUser);
         console.log(parsedJSONUsersList);

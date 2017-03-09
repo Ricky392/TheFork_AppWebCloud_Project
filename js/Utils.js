@@ -114,6 +114,7 @@ function getLiteralResHour(index) {
 }
 
 function generateReservationArray() {
+    //var retJson = {"reservations": []};
     var retJson = {"reservations": []};
     var resturantsList = localStorage.getItem('resturantsList');
     var parsedJSONResturantsList = JSON.parse(resturantsList);
