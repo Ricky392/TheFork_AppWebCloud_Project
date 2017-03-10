@@ -2,10 +2,22 @@
  * Created by ricca on 15/02/2017.
  */
 
-function generatePolaroid() {
-    var resturantsList = localStorage.getItem('resturantsList');
-    var parsedJSONResturantsList = JSON.parse(resturantsList);
-    var resturants = parsedJSONResturantsList.resturants;
+//allowed filtertype: CITTA, NOME, TIPO, CAPIENZA
+
+function generatePolaroid(resturants) {
+    var template = document.querySelector('#polaroid_template');
+    var polaroids = document.getElementsByClassName("polaroid");
+
+    if(resturants == null){
+        var resturantsList = localStorage.getItem('resturantsList');
+        var parsedJSONResturantsList = JSON.parse(resturantsList);
+        resturants = parsedJSONResturantsList.resturants;
+
+    }
+
+    for(var pol in polaroids){
+        clearPolaroids();
+    }
 
     //load resturant data
     var name = document.getElementById("resturant_name");
@@ -15,9 +27,8 @@ function generatePolaroid() {
     var vacancy = document.getElementById("resturant_vacancy");
     var menu = document.getElementById("resturant_menu");
 
-
-    var i = 0;
-    var template = document.querySelector('#polaroid_template');
+    console.log("numero ristoranti associati ",resturants.length);
+    i = 0;
     while (i < resturants.length) {
         var resturant = resturants[i];
         var clone = template.content.cloneNode(true);
@@ -41,6 +52,15 @@ function generatePolaroid() {
         for(var j=0; j<resturant.menus.length; j++){
             menu.innerHTML = resturant.menus[j].menu;
         }
+    }
+}
+
+function clearPolaroids() {
+    var template = document.querySelector('#polaroid_template');
+    var polaroids = template.parentNode.getElementsByClassName("polaroid");
+    console.log(polaroids.length);
+    for(var i=0;i<polaroids.length;i++){
+        template.parentNode.removeChild(polaroids[0]);
     }
 }
 

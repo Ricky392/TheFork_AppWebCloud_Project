@@ -23,3 +23,54 @@ function filterFunction(id, input) {
         }
     }
 }
+
+function searchWithFilters() {
+
+    var citta    = document.getElementById("filterCitta").innerHTML;
+    var nome     = document.getElementById("filterNome").innerHTML;
+    var tipo     = document.getElementById("filterTipo").innerHTML;
+    var capienza = document.getElementById("filterCapienza").innerHTML;
+
+    var resturantsList = localStorage.getItem('resturantsList');
+    var parsedJSONResturantsList = JSON.parse(resturantsList);
+    var resturants = parsedJSONResturantsList.resturants;
+
+    if(citta != "Seleziona città"){
+        resturants = resturants.filter(function (restItem) {
+            return restItem.citta === citta;
+        });
+    }
+
+    if(nome != "Seleziona nome ristorante") {
+        resturants = resturants.filter(function (restItem) {
+            return restItem.nome === nome;
+        });
+    }
+
+    if(tipo != "Seleziona tipologia ristorante"){
+        resturants = resturants.filter(function (restItem) {
+
+            for (element in restItem.tipologia){
+                if(tipo == restItem.tipologia[element]){
+                    return restItem;
+                }
+            }
+        });
+    }
+
+    if(capienza != "Seleziona capienza ristorante"){
+        resturants = resturants.filter(function (restItem) {
+            return restItem.posti < Number(capienza);
+        });
+    }
+
+    console.log(resturants);
+
+    generatePolaroid(resturants);
+}
+
+function setFilterButton(filterParameter, filtertype, id) {
+        var filterButton = document.getElementById(filtertype);
+        filterButton.innerHTML = filterParameter;
+        document.getElementById(id).classList.remove("show");
+}

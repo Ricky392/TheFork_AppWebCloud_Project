@@ -14,7 +14,7 @@
 
     <title>La Forchetta</title>
 </head>
-<body onload="loadUsersData();loadResturantsData();generatePolaroid();checkIfLogged();">
+<body onload="loadUsersData();loadResturantsData();generatePolaroid(null);checkIfLogged();">
 
     <!-- NAVIGATION BAR -->
 
@@ -38,68 +38,74 @@
         <h4 class="page_title">Prenotazioni ristoranti on-line</h4>
         <br/>
         <h3>Scegli e prenota uno dei nostri ristoranti sul territorio italiano</h3>
+
+        <!-- FILTER SECTION -->
+
         <div class="filters">
             <p>
                 Cerca il tuo ristorante preferito
             </p>
             <div class="dropdown">
-                <button onclick="displayElements('cityDropdown')" class="dropbtn">Città</button>
+                <button id="filterCitta" onclick="displayElements('cityDropdown')" class="dropbtn">Seleziona città</button>
                 <div id="cityDropdown" class="dropdown-content">
                     <input type="text" placeholder="Cerca città..." id="cityInput" class="searchInput" onkeyup="filterFunction('cityDropdown','cityInput')">
-                    <a href="#">Milano</a>
-                    <a href="#">Genova</a>
-                    <a href="#">Firenze</a>
-                    <a href="#">Palermo</a>
-                    <a href="#">Venezia</a>
-                    <a href="#">Trieste</a>
-                    <a href="#">Bologna</a>
+                    <a href="#" onclick="setFilterButton('Milano', 'filterCitta', 'cityDropdown')">Milano</a>
+                    <a href="#" onclick="setFilterButton('Genova', 'filterCitta', 'cityDropdown')">Genova</a>
+                    <a href="#" onclick="setFilterButton('Firenze', 'filterCitta', 'cityDropdown')">Firenze</a>
+                    <a href="#" onclick="setFilterButton('Palermo', 'filterCitta', 'cityDropdown')">Palermo</a>
+                    <a href="#" onclick="setFilterButton('Venezia', 'filterCitta', 'cityDropdown')">Venezia</a>
+                    <a href="#" onclick="setFilterButton('Trieste', 'filterCitta', 'cityDropdown')">Trieste</a>
+                    <a href="#" onclick="setFilterButton('Bologna', 'filterCitta', 'cityDropdown')">Bologna</a>
+                    <a href="#" onclick="setFilterButton('Legnano', 'filterCitta', 'cityDropdown')">Legnano</a>
                 </div>
             </div>
 
             <div class="dropdown">
-                <button onclick="displayElements('nameDropdown')" class="dropbtn">Nome ristorante</button>
+                <button id="filterNome" onclick="displayElements('nameDropdown')" class="dropbtn">Seleziona nome ristorante</button>
                 <div id="nameDropdown" class="dropdown-content">
                     <input type="text" placeholder="Cerca nome ristorante..." id="nameInput" class="searchInput" onkeyup="filterFunction('nameDropdown','nameInput')">
-                    <a href="#">Muolin Rouge</a>
-                    <a href="#">La Forchetta</a>
-                    <a href="#">The Grill</a>
+                    <a href="#" onclick="setFilterButton('Muolin Rouge', 'filterNome', 'nameDropdown')">Muolin Rouge</a>
+                    <a href="#" onclick="setFilterButton('La Forchetta', 'filterNome', 'nameDropdown')">La Forchetta</a>
+                    <a href="#" onclick="setFilterButton('The Grill', 'filterNome', 'nameDropdown')">The Grill</a>
+                    <a href="#" onclick="setFilterButton('La Conchiglia', 'filterNome', 'nameDropdown')">La Conchiglia</a>
                 </div>
             </div>
 
             <div class="dropdown">
-                <button onclick="displayElements('typeDropdown')" class="dropbtn">Tipologia ristorante</button>
+                <button id="filterTipo" onclick="displayElements('typeDropdown')" class="dropbtn">Seleziona tipologia ristorante</button>
                 <div id="typeDropdown" class="dropdown-content">
                     <input type="text" placeholder="Cerca tipologia ristorante..." id="typeInput" class="searchInput" onkeyup="filterFunction('typeDropdown','typeInput')">
-                    <a href="#">Vegano</a>
-                    <a href="#">Cucina creativa</a>
-                    <a href="#">Sushi</a>
-                    <a href="#">Pizzeria</a>
-                    <a href="#">Esotico</a>
+                    <a href="#" onclick="setFilterButton('vegano', 'filterTipo', 'typeDropdown')">Vegano</a>
+                    <a href="#" onclick="setFilterButton('cucina creativa', 'filterTipo', 'typeDropdown')">Cucina creativa</a>
+                    <a href="#" onclick="setFilterButton('sushi', 'filterTipo', 'typeDropdown')">Sushi</a>
+                    <a href="#" onclick="setFilterButton('pizzeria', 'filterTipo', 'typeDropdown')">Pizzeria</a>
+                    <a href="#" onclick="setFilterButton('esotico', 'filterTipo', 'typeDropdown')">Esotico</a>
                 </div>
             </div>
 
             <div class="dropdown">
-                <button onclick="displayElements('numberDropdown')" class="dropbtn">Capienza ristorante</button>
+                <button id="filterCapienza" onclick="displayElements('numberDropdown')" class="dropbtn">Seleziona capienza ristorante</button>
                 <div id="numberDropdown" class="dropdown-content">
-                    <a href="#">Meno di 50</a>
-                    <a href="#">Compreso tra 50 e 100</a>
-                    <a href="#">Più di 100</a>
+                    <a href="#" onclick="setFilterButton(50, 'filterCapienza', 'numberDropdown')">Fino a 50</a>
+                    <a href="#" onclick="setFilterButton(100, 'filterCapienza', 'numberDropdown')">Fino a 100</a>
+                    <a href="#" onclick="setFilterButton(999, 'filterCapienza', 'numberDropdown')">Più di 100</a>
                 </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="searchWithFilters()" class="dropbtn"><strong>CERCA</strong></button>
             </div>
 
         </div>
-
         <template id="polaroid_template">
            <div class="polaroid">
                <h2></h2>
                <p></p>
                <a href="#" class="bookBtn">PRENOTA</a>
                <a href="#" class="bookBtn">Più informazioni</a>
-
-            </div>
+           </div>
         </template>
-
     </div>
+
 
     <!-- RESTURANT DETAIL WINDOW-->
     <div class="modal" id="resturant_detail">
