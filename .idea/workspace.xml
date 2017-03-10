@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2463344-09fc-408e-b36c-b819cdc0f8ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dove_siamo.html" afterPath="$PROJECT_DIR$/dove_siamo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/filter_functions.js" afterPath="$PROJECT_DIR$/js/filter_functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/indexFunctions.js" afterPath="$PROJECT_DIR$/js/indexFunctions.js" />
-    </list>
+    <list default="true" id="b2463344-09fc-408e-b36c-b819cdc0f8ef" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -376,12 +370,12 @@
       <workItem from="1488964704727" duration="21000" />
       <workItem from="1488964770911" duration="6884000" />
       <workItem from="1489070551064" duration="7148000" />
-      <workItem from="1489136013098" duration="10715000" />
+      <workItem from="1489136013098" duration="11314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92149000" />
+    <option name="totallyTimeSpent" value="92748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
