@@ -1,31 +1,31 @@
+.logo_container{
+    float: left;
+}
+
+.nav_link{
+    margin-top: 30px;
+    float: right;
+}
 
 .nav_title a{
     float: left;
     text-decoration: none;
 }
 
-.nav_link{
-    float: right;
-}
-
 .nav_link a{
     text-decoration: none;
-    margin-right: 20px;
+    text-transform: uppercase;
+    margin-right: 10px;
     color: darkblue;
 }
 
 .navbar{
-    width: 90%;
+    width: 100%;
     clear: both;
     margin: 0 auto;
     background: aquamarine;
-    padding: 50px;
-}
 
-.page_title{
-    width: 80%;
-    text-align: center;
-    margin: 0 auto;
+    display: table;
 }
 
 
@@ -95,6 +95,10 @@
 }
 
 /* fine filters presenation */
+
+.page_title{
+    
+}
 
 .page_content{
     clear: both;
