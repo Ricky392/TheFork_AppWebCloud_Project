@@ -31,20 +31,26 @@
     </div>
 
     <!-- PAGE CONTENT -->
+    <div class="guide_text_container">
+        <div class="guide_text"><strong>
+            <img style="width: 600px;" src="data/logo.png">
+            <p>
+                Benvenuto in La Forchetta
+            </p>
+            <p>
+                Scegli e prenota online uno dei nostri ristoranti sul territorio italiano
+            </p>
+        </strong></div>
+    </div>
 
     <div class="page_content">
-
-        <h1 class="page_title">La Forchetta</h1>
-        <h4 class="page_title">Prenotazioni ristoranti on-line</h4>
-        <br/>
-        <h3>Scegli e prenota uno dei nostri ristoranti sul territorio italiano</h3>
 
         <!-- FILTER SECTION -->
 
         <div class="filters">
-            <p>
-                Cerca il tuo ristorante preferito
-            </p>
+
+            <p class="dropdown search_text"><strong>Cerca il tuo ristorante preferito</strong></p>
+
             <div class="dropdown">
                 <button id="filterCitta" onclick="displayElements('cityDropdown')" class="dropbtn">Seleziona città</button>
                 <div id="cityDropdown" class="dropdown-content">
@@ -169,10 +175,12 @@
 
     <!-- FOOTER BAR -->
     <div class="footer">
-        <a href="index.html">Home</a>
-        <a href="chi_siamo.html">Chi siamo</a>
-        <a href="index.html">Prenota</a>
-        <a href="personal_area.html">Accedi area Clienti</a>
+        <div class="footer_link">
+            <a href="index.html">Home</a>
+            <a href="chi_siamo.html">Chi siamo</a>
+            <a href="index.html">Prenota</a>
+            <a href="personal_area.html">Accedi area Clienti</a>
+        </div>
     </div>
 </body>
 </html>
