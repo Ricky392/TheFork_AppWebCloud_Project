@@ -6,6 +6,12 @@
  toggle between hiding and showing the dropdown content */
 function displayElements(id) {
     console.log(id);
+
+    document.getElementById("nameDropdown").classList.remove("show");
+    document.getElementById("cityDropdown").classList.remove("show");
+    document.getElementById("typeDropdown").classList.remove("show");
+    document.getElementById("numberDropdown").classList.remove("show");
+
     document.getElementById(id).classList.toggle("show");
 }
 
