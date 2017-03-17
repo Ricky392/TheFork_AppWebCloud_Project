@@ -15,6 +15,7 @@
 					"antipasti":["patatine","olive fritte"],
 					"primi":[],
 					"secondi":["pizza a scelta"],
+					"dolci":[],
 					"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
 					"bevande":["acqua","coca-cola"],
 					"prezzo":17.00,

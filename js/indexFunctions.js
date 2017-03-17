@@ -19,18 +19,11 @@ function generatePolaroid(resturants) {
         clearPolaroids();
     }
 
-    //load resturant data
-    var name = document.getElementById("resturant_name");
-    var type = document.getElementById("resturant_type");
-    var position = document.getElementById("resturant_position");
-    var price = document.getElementById("resturant_price");
-    var vacancy = document.getElementById("resturant_vacancy");
-    var menu = document.getElementById("resturant_menu");
-
     console.log("numero ristoranti associati ",resturants.length);
     i = 0;
-    while (i < resturants.length) {
+    for (var i in resturants) {
         var resturant = resturants[i];
+        console.log(resturant.nome);
         var clone = template.content.cloneNode(true);
         var h2 = clone.querySelectorAll('h2');
         h2[0].innerHTML = resturant.nome;
@@ -41,18 +34,66 @@ function generatePolaroid(resturants) {
         a[0].setAttribute("onClick", "bookResturant('"+nome+"');");
         a[1].setAttribute("onClick", "showResturantDetail('"+nome+"');");
         template.parentNode.appendChild(clone);
-        i++;
-
+    }
+        //i++;
+/*
         name.innerHTML = resturant.nome;
         type.innerHTML = "Categoria: "+resturant.tipologia;
-        position.innerHTML = "situato in "+resturant.via+", "+resturant.citta;
-        price.innerHTML = "Fascia di prezzo "+resturant.fascia_prezzo;
-        vacancy.innerHTML = "Posti a sedere: "+resturant.posti;
-        menu.innerHTML = "Menù presenti: ";
-        for(var j=0; j<resturant.menus.length; j++){
-            menu.innerHTML = resturant.menus[j].menu;
+        position.innerHTML = "<strong>DOVE: </strong>"+resturant.via+", "+resturant.citta;
+        price.innerHTML = "<strong>€€€: </strong>"+resturant.fascia_prezzo;
+        vacancy.innerHTML = "<strong>CAPIENZA: </strong>"+resturant.posti;
+        menu.innerHTML = "<strong>MENU: </strong><br/><br/>";
+        //while (resturant.menus[j] != undefined) {
+        //while(j < resturant.menus.length){
+        for(var j in resturant.menus){
+            console.log(j);
+            //for (var k in resturants[j].menus) {
+                //console.log(resturants[j].nome, resturants[j].menus[k].menu);
+            getMenu(j, resturant, menu);
+
+            //menu.appendChild(p);
+            //menu.appendChild(p.cloneNode(true));
+            //menu.appendChild(p.cloneNode(true));
+            //}
+            //document.getElementById("resturant_menu").appendChild(document.createTextNode(resturant.menus[j]));
+            //getMenu(j, resturant, menu);
+            //j++;
         }
-    }
+    }*/
+}
+
+function getMenu(j, resturant, menu){
+    console.log("j", j, resturant.menus[j].menu);
+    var index = Number(j)+1;
+    menu.innerHTML = menu.innerHTML+index+". "+"<i>"+resturant.menus[j].menu+"</i>: ";
+    var ul = document.createElement("ul");
+    ul.setAttribute("id", "menu"+j);
+    var antipasti = document.createElement("li");
+    var primi = document.createElement("li");
+    var secondi = document.createElement("li");
+    var dolci = document.createElement("li");
+    var allergeni = document.createElement("li");
+    var bevande = document.createElement("li");
+    var prezzo = document.createElement("li");
+    var sconti = document.createElement("ul");
+
+    antipasti.appendChild(document.createTextNode("Antipasti: "+resturant.menus[j].antipasti));
+    primi.appendChild(document.createTextNode("Primi: "+resturant.menus[j].primi));
+    secondi.appendChild(document.createTextNode("Secondi: "+resturant.menus[j].secondi));
+    dolci.appendChild(document.createTextNode("Dolci: "+resturant.menus[j].dolci));
+    bevande.appendChild(document.createTextNode("Bevande: "+resturant.menus[j].bevande));
+    allergeni.appendChild(document.createTextNode("*Allergeni: "+resturant.menus[j].allergeni));
+    prezzo.appendChild(document.createTextNode("Prezzo: "+resturant.menus[j].prezzo+" €"));
+
+    ul.appendChild(antipasti.cloneNode(true));
+    ul.appendChild(primi.cloneNode(true));
+    ul.appendChild(secondi.cloneNode(true));
+    ul.appendChild(dolci.cloneNode(true));
+    ul.appendChild(bevande.cloneNode(true));
+    ul.appendChild(prezzo.cloneNode(true));
+    ul.appendChild(allergeni.cloneNode(true));
+
+    document.getElementById("resturant_menu").appendChild(ul);
 }
 
 function clearPolaroids() {
@@ -71,7 +112,19 @@ function showResturantDetail(nomeRistorante) {
     var parsedJSONReservationlist = JSON.parse(reservationList);
     var reservations = parsedJSONReservationlist.reservations;
 
+    var resturantsList = localStorage.getItem('resturantsList');
+    var parsedJSONResturantsList = JSON.parse(resturantsList);
+    resturants = parsedJSONResturantsList.resturants;
+
     var reservation_table = document.getElementById("resturant_reservations");
+
+    //load resturant data
+    var name = document.getElementById("resturant_name");
+    var type = document.getElementById("resturant_type");
+    var position = document.getElementById("resturant_position");
+    var price = document.getElementById("resturant_price");
+    var vacancy = document.getElementById("resturant_vacancy");
+    var menu = document.getElementById("resturant_menu");
 
     console.log(nomeRistorante);
     document.getElementById("resturant_detail").style.display= "block";
@@ -79,20 +132,36 @@ function showResturantDetail(nomeRistorante) {
     reservation_table.innerHTML = "";
 
     //estraggo l'oggetto rappresentate il ristorante giusto
-    var resturant = reservations.filter(function (resturantItem) {
+    var resturantRes = reservations.filter(function (resturantItem) {
         return resturantItem.name === nomeRistorante;
     });
 
-    var fascia0 = resturant[0].f0;
-    var fascia1 = resturant[0].f1;
+    var resturant = resturants.filter(function (resturantItem){
+        return resturantItem.nome === nomeRistorante;
+    });
+
+    var fascia0 = resturantRes[0].f0;
+    var fascia1 = resturantRes[0].f1;
     for(var k=0; k<7; k++){
         var li = document.createElement("li");
         li.appendChild(document.createTextNode(getLiteralDay(k)+" -> 19:00 - 21:00 "+fascia0[k]+" posti liberi | dopo le 21:00 "+fascia1[k]+" posti liberi"));
         reservation_table.appendChild(li);
     }
+    console.log(resturant);
+    resturant = resturant[0];
 
-
-
+    name.innerHTML = resturant.nome;
+    type.innerHTML = "Categoria: "+resturant.tipologia;
+    position.innerHTML = "<strong>DOVE: </strong>"+resturant.via+", "+resturant.citta;
+    price.innerHTML = "<strong>€€€: </strong>"+resturant.fascia_prezzo;
+    vacancy.innerHTML = "<strong>CAPIENZA: </strong>"+resturant.posti;
+    menu.innerHTML = "<strong>MENU: </strong><br/><br/>";
+    //while (resturant.menus[j] != undefined) {
+    //while(j < resturant.menus.length){
+    for(var j in resturant.menus){
+        console.log(j);
+        getMenu(j, resturant, menu);
+    }
 }
 
 function bookResturant(restName) {

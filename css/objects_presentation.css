@@ -157,7 +157,7 @@
 }
 
 .intro_logo{
-    width: 300px;
+    width: 100%;
 }
 
 .search_text{
@@ -237,7 +237,7 @@
     }
 
     .intro_logo{
-        width: 600px;
+        width: 90%;
     }
 
 }
