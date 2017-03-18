@@ -17,9 +17,10 @@
 .modal-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
+    border: 1px none #888;
     border-radius: 4px;
     width: 80%; /* Could be more or less, depending on screen size */
+    padding-bottom: 3%;
 }
 
 .modal-content h3{
@@ -32,6 +33,17 @@
 
 .modal-content p{
     margin-left: 5%;
+    margin-right: 5%;
+}
+
+.modal-title{
+  background: #4CAF50;
+  width: 100%;
+  text-align: center;
+  color: white;
+  border-radius: 4px 4px 0 0;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
 }
 
 /* The Close Button (x) */

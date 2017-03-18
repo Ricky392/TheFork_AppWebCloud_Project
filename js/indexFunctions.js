@@ -125,28 +125,35 @@ function showResturantDetail(nomeRistorante) {
     var price = document.getElementById("resturant_price");
     var vacancy = document.getElementById("resturant_vacancy");
     var menu = document.getElementById("resturant_menu");
+    var booking_section = document.getElementById("booking_section");
 
     console.log(nomeRistorante);
     document.getElementById("resturant_detail").style.display= "block";
 
-    reservation_table.innerHTML = "";
+    booking_section.removeChild(booking_section.lastChild);
+    booking_section.innerHTML = "<strong>STATO DELLE PRENOTAZINI:</strong>"
 
     //estraggo l'oggetto rappresentate il ristorante giusto
     var resturantRes = reservations.filter(function (resturantItem) {
         return resturantItem.name === nomeRistorante;
     });
 
+    var fascia0 = resturantRes[0].f0;
+    var fascia1 = resturantRes[0].f1;
+
+    var ul = document.createElement("ul");
+    for(var k=0; k<7; k++){
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(getLiteralDay(k)+" -> 19:00 - 21:00 "+fascia0[k]+" posti liberi | dopo le 21:00 "+fascia1[k]+" posti liberi"));
+        ul.appendChild(li);
+    }
+
+    booking_section.appendChild(ul);
+
     var resturant = resturants.filter(function (resturantItem){
         return resturantItem.nome === nomeRistorante;
     });
 
-    var fascia0 = resturantRes[0].f0;
-    var fascia1 = resturantRes[0].f1;
-    for(var k=0; k<7; k++){
-        var li = document.createElement("li");
-        li.appendChild(document.createTextNode(getLiteralDay(k)+" -> 19:00 - 21:00 "+fascia0[k]+" posti liberi | dopo le 21:00 "+fascia1[k]+" posti liberi"));
-        reservation_table.appendChild(li);
-    }
     console.log(resturant);
     resturant = resturant[0];
 
@@ -183,6 +190,8 @@ function bookResturant(restName) {
 
 function confirmPrenotation(restName) {
 
+    var isBookingPossible = false;
+
     //lista prenotazioni
     var reservationList = localStorage.getItem("reservationList");
     var parsedJSONReservationlist = JSON.parse(reservationList);
@@ -207,27 +216,39 @@ function confirmPrenotation(restName) {
 
     //modifico la disponibilità di posti in base al giorno e l'orario
     if(hour == 0){
-        resturant[0].f0[day] = resturant[0].f0[day] - seats;
+        if(resturant[0].f0[day] >= seats){
+            resturant[0].f0[day] = resturant[0].f0[day] - seats;
+            isBookingPossible = true;
+        }
+
     } else if(hour == 1){
-        resturant[0].f1[day] = resturant[0].f1[day] - seats;
+        if(resturant[0].f1[day] >= seats){
+            resturant[0].f1[day] = resturant[0].f1[day] - seats;
+            isBookingPossible = true;
+        }
+
     }
+    if(isBookingPossible){
+        localStorage.setItem('reservationList', JSON.stringify(parsedJSONReservationlist));
 
-    localStorage.setItem('reservationList', JSON.stringify(parsedJSONReservationlist));
+        var userItem = users.filter(function (item) {
+            return item.email === user.toString();
+        });
 
-    var userItem = users.filter(function (item) {
-        return item.email === user.toString();
-    });
+        var newReservation = {
+            "resturant": restName,
+            "day": day,
+            "hour": hour,
+            "seats": seats
+        };
+        console.log(userItem[0].reservations);
+        userItem[0].reservations.push(newReservation);
+        localStorage.setItem('usersList', JSON.stringify(parsedJSONUsersList));
 
-    var newReservation = {
-        "resturant": restName,
-        "day": day,
-        "hour": hour,
-        "seats": seats
-    };
-    console.log(userItem[0].reservations);
-    userItem[0].reservations.push(newReservation);
-    localStorage.setItem('usersList', JSON.stringify(parsedJSONUsersList));
-
-    alert("Grazie di aver prenotato con La Forchetta");
-    document.getElementById("resturant_booking").style.display= "none";
+        alert("Grazie di aver prenotato con La Forchetta");
+        document.getElementById("resturant_booking").style.display= "none";
+    } else{
+      //non è possibile prenotare quindi stoppo l'utente
+      alert("Ci dispiace, il numero di posti da te richiesti non è disponibile");
+    }
 }

@@ -89,7 +89,8 @@ function deleteCookie(){
 function checkIfLogged() {
     if(checkLogin()){
         var loginLink = document.getElementById("login_link");
-        loginLink.innerHTML = "Bentornato caro utente";
+        var username = getCookie('name');
+        loginLink.innerHTML = "Bentornato "+username;
     }
 
 }

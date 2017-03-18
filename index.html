@@ -12,6 +12,8 @@
     <script src="js/filter_functions.js"></script>
     <script src="js/Utils.js"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
     <title>La Forchetta</title>
 </head>
 <body onload="loadUsersData();loadResturantsData();generatePolaroid(null);checkIfLogged();">
@@ -119,8 +121,8 @@
             <div class="imgcontainer">
                 <span onclick="document.getElementById('resturant_detail').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
-            <div style="background: #4CAF50; width: 100%; text-align: center; color: white;">
-                <h3 id="resturant_name"></h3> <!-- Nome ristorante -->
+            <div class="modal-title">
+                <h2 id="resturant_name"></h2> <!-- Nome ristorante -->
                 <h4 id="resturant_type"></h4> <!-- Tipologia ristorante -->
             </div>
 
@@ -129,7 +131,7 @@
             <p id="resturant_vacancy"></p> <!-- posti ristorante -->
             <p id="resturant_menu"></p> <!-- Menu ristorante -->
 
-            <p>Stato delle prenotazioni di questa settimana:</p><ul id="resturant_reservations"></ul> <!-- prenotazioni ristorante per la settimana -->
+            <p id="booking_section"><strong>STATO DELLE PRENOTAZINI:</strong></p>
         </div>
     </div>
 
@@ -139,7 +141,7 @@
             <div class="imgcontainer">
                 <span onclick="document.getElementById('resturant_booking').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
-            <div style="background: #4CAF50; width: 100%; text-align: center; color: white;">
+            <div class="modal-title">
                 <h3 id="title"></h3> <!-- Nome ristorante -->
             </div>
             <p id="reservation_name"></p> <!-- Posizione ristorante -->
