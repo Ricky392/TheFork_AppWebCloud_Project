@@ -16,19 +16,19 @@
 
     <title>La Forchetta</title>
 </head>
-<body onload="loadUsersData();loadResturantsData();generatePolaroid(null);checkIfLogged();">
+<body style="margin: 0" onload="loadUsersData();loadResturantsData();generatePolaroid(null);checkIfLogged();">
 
     <!-- NAVIGATION BAR -->
 
     <div class="navbar">
         <div class="logo_container">
-            <a href="index.html"><img style="width: 200px;" src="data/logo.png"></a>
+            <a href="index.html"><img class="logo" src="data/logo.png"></a>
         </div>
         <div class="nav_link">
-                <a href="index.html">Home</a>
-                <a href="chi_siamo.html">Chi siamo</a>
-                <a href="index.html">Prenota</a>
-                <a id="login_link" href="login.html" onclick="return !checkLogin()">Login</a>
+                <a href="index.html"><strong>Home</strong></a>
+                <a href="chi_siamo.html"><strong>Chi siamo</strong></a>
+                <a href="index.html"><strong>Prenota</strong></a>
+                <a id="login_link" href="login.html" onclick="return !checkLogin()"><strong>Login</strong></a>
             </div>
     </div>
 
@@ -108,8 +108,8 @@
            <div class="polaroid">
                <h2></h2>
                <p></p>
-               <a href="#" class="bookBtn">PRENOTA</a>
-               <a href="#" class="bookBtn">Più informazioni</a>
+               <a href="#polaroid" class="bookBtn">PRENOTA</a>
+               <a href="#polaroid" class="bookBtn">Più informazioni</a>
            </div>
         </template>
     </div>
@@ -127,10 +127,13 @@
             </div>
 
             <p id="resturant_position"></p> <!-- Posizione ristorante -->
+            <hr>
             <p id="resturant_price"></p> <!-- Fascia di prezzo ristorante -->
+            <hr>
             <p id="resturant_vacancy"></p> <!-- posti ristorante -->
+            <hr>
             <p id="resturant_menu"></p> <!-- Menu ristorante -->
-
+            <hr>
             <p id="booking_section"><strong>STATO DELLE PRENOTAZINI:</strong></p>
         </div>
     </div>

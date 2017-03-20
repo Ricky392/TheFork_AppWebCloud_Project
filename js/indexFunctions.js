@@ -33,33 +33,12 @@ function generatePolaroid(resturants) {
         var nome = resturant.nome;
         a[0].setAttribute("onClick", "bookResturant('"+nome+"');");
         a[1].setAttribute("onClick", "showResturantDetail('"+nome+"');");
+        //set background
+        var imgUrl = resturant.img;
+        var div = clone.querySelectorAll('div');
+        div[0].setAttribute("style", "background-image: url("+imgUrl+")");
         template.parentNode.appendChild(clone);
     }
-        //i++;
-/*
-        name.innerHTML = resturant.nome;
-        type.innerHTML = "Categoria: "+resturant.tipologia;
-        position.innerHTML = "<strong>DOVE: </strong>"+resturant.via+", "+resturant.citta;
-        price.innerHTML = "<strong>€€€: </strong>"+resturant.fascia_prezzo;
-        vacancy.innerHTML = "<strong>CAPIENZA: </strong>"+resturant.posti;
-        menu.innerHTML = "<strong>MENU: </strong><br/><br/>";
-        //while (resturant.menus[j] != undefined) {
-        //while(j < resturant.menus.length){
-        for(var j in resturant.menus){
-            console.log(j);
-            //for (var k in resturants[j].menus) {
-                //console.log(resturants[j].nome, resturants[j].menus[k].menu);
-            getMenu(j, resturant, menu);
-
-            //menu.appendChild(p);
-            //menu.appendChild(p.cloneNode(true));
-            //menu.appendChild(p.cloneNode(true));
-            //}
-            //document.getElementById("resturant_menu").appendChild(document.createTextNode(resturant.menus[j]));
-            //getMenu(j, resturant, menu);
-            //j++;
-        }
-    }*/
 }
 
 function getMenu(j, resturant, menu){
@@ -162,7 +141,7 @@ function showResturantDetail(nomeRistorante) {
     position.innerHTML = "<strong>DOVE: </strong>"+resturant.via+", "+resturant.citta;
     price.innerHTML = "<strong>€€€: </strong>"+resturant.fascia_prezzo;
     vacancy.innerHTML = "<strong>CAPIENZA: </strong>"+resturant.posti;
-    menu.innerHTML = "<strong>MENU: </strong><br/><br/>";
+    menu.innerHTML = "<strong>MENUs: </strong><br/><br/>";
     //while (resturant.menus[j] != undefined) {
     //while(j < resturant.menus.length){
     for(var j in resturant.menus){

@@ -9,6 +9,7 @@
 			"fascia_prezzo": "economico",
 			"review":3,
 			"posti":36,
+			"img": "data/img00.jpg",
 			"menus":[
 				{
 					"menu":"menu pizza",
@@ -54,6 +55,7 @@
 			"fascia_prezzo": "medio",
 			"review":5,
 			"posti":130,
+			"img": "data/img01.jpg",
 			"menus":[
 				{
 					"menu":"menu pizza",

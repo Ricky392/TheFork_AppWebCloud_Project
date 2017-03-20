@@ -2,10 +2,15 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+
 .logo_container{
     width: 30%;
     margin: 0 auto;
 
+}
+
+.logo{
+  width: 200px;
 }
 
 .nav_link{
@@ -106,14 +111,20 @@
 
 .polaroid {
     float: left;
+    color: white;
+    text-shadow: 1px 3px 5px gray;
     margin: 5px;
     padding: 15px;
     width: 300px;
     height: 200px;
-    border: 1px solid black;
+    border: 3px solid lightgray;
     border-radius: 4px;
+    box-shadow: 1px 3px 5px lightgrey;
 }
 
+.polaroid:hover{
+    box-shadow: 3px 3px 5px gray;
+}
 .imgExpo{
     width: 100%;
 }

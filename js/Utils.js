@@ -90,7 +90,7 @@ function checkIfLogged() {
     if(checkLogin()){
         var loginLink = document.getElementById("login_link");
         var username = getCookie('name');
-        loginLink.innerHTML = "Bentornato "+username;
+        loginLink.innerHTML = "<strong>Bentornato/a "+username+"</strong>";
     }
 
 }
