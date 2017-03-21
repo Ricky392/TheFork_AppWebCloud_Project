@@ -75,6 +75,21 @@ function searchWithFilters() {
     generatePolaroid(resturants);
 }
 
+function resetFilters(){
+    var cityFilter = document.getElementById("filterCitta");
+    var nameFilter = document.getElementById("filterNome");
+    var typeFilter = document.getElementById("filterTipo");
+    var seatsFilter = document.getElementById("filterCapienza");
+
+    cityFilter.innerText = "Seleziona città";
+    nameFilter.innerText = "Seleziona nome ristorante";
+    typeFilter.innerText = "Seleziona tipologia ristorante";
+    seatsFilter.innerText = "Seleziona capienza ristorante";
+
+    generatePolaroid();
+
+}
+
 function setFilterButton(filterParameter, filtertype, id) {
         var filterButton = document.getElementById(filtertype);
         filterButton.innerHTML = filterParameter;

@@ -99,10 +99,15 @@
                     <a href="#numberDropdown" onclick="setFilterButton(999, 'filterCapienza', 'numberDropdown')">Più di 100</a>
                 </div>
             </div>
+            <!-- search button -->
             <div class="dropdown">
                 <button onclick="searchWithFilters()" class="dropbtn"><strong>CERCA</strong></button>
             </div>
 
+            <!-- reset button -->
+            <div class="dropdown">
+                <button onclick="resetFilters()" class="resetbtn"><strong>RESET</strong></button>
+            </div>
         </div>
         <template id="polaroid_template">
            <div class="polaroid">
@@ -142,7 +147,7 @@
     <div class="modal" id="resturant_booking">
         <div class="modal-content animate">
             <div class="imgcontainer">
-                <span onclick="document.getElementById('resturant_booking').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <span onclick="document.getElementById('resturant_booking').style.display='none'" class="close" title="Close Modal">&times;RESET</span>
             </div>
             <div class="modal-title">
                 <h3 id="title"></h3> <!-- Nome ristorante -->
