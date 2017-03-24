@@ -2,10 +2,6 @@
  * Created by ricca on 18/02/2017.
  */
 
-/**
- * Created by ricca on 18/02/2017.
- */
-
 var name;
 var surname;
 var email;
@@ -46,12 +42,14 @@ function checkRegistrationForm() {
     return registration();
 }
 
+//do registration
 function registration() {
     var i=0;
     var found = false;
     var usersList = localStorage.getItem('usersList');
     var parsedJSONUsersList = JSON.parse(usersList);
 
+    //check if there is a user that already have an email equals to the new one
     for(i=0; i < parsedJSONUsersList.users.length; i++){
         if(parsedJSONUsersList.users[i].email == email){
             found = true;

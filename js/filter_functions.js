@@ -15,6 +15,7 @@ function displayElements(id) {
     document.getElementById(id).classList.toggle("show");
 }
 
+//search into dropdown
 function filterFunction(id, input) {
     var input, filter, ul, li, a, i;
     input = document.getElementById(input);
@@ -71,7 +72,7 @@ function searchWithFilters() {
     }
 
     console.log(resturants);
-
+    //generate result polaroid array
     generatePolaroid(resturants);
 }
 
@@ -85,7 +86,7 @@ function resetFilters(){
     nameFilter.innerText = "Seleziona nome ristorante";
     typeFilter.innerText = "Seleziona tipologia ristorante";
     seatsFilter.innerText = "Seleziona capienza ristorante";
-
+    //regenerate original polaroids
     generatePolaroid();
 
 }

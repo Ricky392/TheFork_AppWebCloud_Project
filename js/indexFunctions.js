@@ -4,6 +4,8 @@
 
 //allowed filtertype: CITTA, NOME, TIPO, CAPIENZA
 
+
+//generate polaroids with html template
 function generatePolaroid(resturants) {
     var template = document.querySelector('#polaroid_template');
     var polaroids = document.getElementsByClassName("polaroid");
@@ -19,7 +21,7 @@ function generatePolaroid(resturants) {
         clearPolaroids();
     }
 
-    console.log("numero ristoranti associati ",resturants.length);
+    //for every resturant generate a polaroid
     i = 0;
     for (var i in resturants) {
         var resturant = resturants[i];
@@ -41,6 +43,8 @@ function generatePolaroid(resturants) {
     }
 }
 
+
+//generate menu into the resturant description
 function getMenu(j, resturant, menu){
     console.log("j", j, resturant.menus[j].menu);
     var index = Number(j)+1;
@@ -75,6 +79,7 @@ function getMenu(j, resturant, menu){
     document.getElementById("resturant_menu").appendChild(ul);
 }
 
+//delete polaroid
 function clearPolaroids() {
     var template = document.querySelector('#polaroid_template');
     var polaroids = template.parentNode.getElementsByClassName("polaroid");
@@ -120,13 +125,13 @@ function showResturantDetail(nomeRistorante) {
     var fascia0 = resturantRes[0].f0;
     var fascia1 = resturantRes[0].f1;
 
+    //show reservation
     var ul = document.createElement("ul");
     for(var k=0; k<7; k++){
         var li = document.createElement("li");
         li.appendChild(document.createTextNode(getLiteralDay(k)+" -> 19:00 - 21:00 "+fascia0[k]+" posti liberi | dopo le 21:00 "+fascia1[k]+" posti liberi"));
         ul.appendChild(li);
     }
-
     booking_section.appendChild(ul);
 
     var resturant = resturants.filter(function (resturantItem){
@@ -150,6 +155,7 @@ function showResturantDetail(nomeRistorante) {
     }
 }
 
+//show booking overlay window
 function bookResturant(restName) {
     var user = getCookie("username");
     if (user != "") {
@@ -167,6 +173,7 @@ function bookResturant(restName) {
 
 }
 
+//confirm prenotation when done with form editing
 function confirmPrenotation(restName) {
 
     var isBookingPossible = false;

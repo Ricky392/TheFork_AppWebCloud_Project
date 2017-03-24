@@ -16,9 +16,11 @@ function hashCode(str){
 
 function loadUsersData() {
     var url="/AppWC/data/users.json";
+    //get request for the above path
     fetch(url).then(function(response) {
         return response.json();
     }).then(function(data) {
+        //load the user list if there's no one in the localStorage
         if(localStorage.getItem('usersList') == null)
             localStorage.setItem('usersList', JSON.stringify(data));
     }).catch(function() {
@@ -28,9 +30,11 @@ function loadUsersData() {
 
 function loadResturantsData() {
     var url="/AppWC/data/resturants.json";
+    //get request for the above path
     fetch(url).then(function(response) {
         return response.json();
     }).then(function(data) {
+        //load the resturant list if there's no one in the localStorage
         if(localStorage.getItem('resturantsList') == null) {
             localStorage.setItem('resturantsList', JSON.stringify(data));
             generateReservationArray();
@@ -66,12 +70,14 @@ function getCookie(cname) {
 function checkCookie() {
     var user = getCookie("username");
     if (user != "") {
-
+    // this branch is triggered when there's no user logged
     } else {
+        //redirect user to login page
         document.location.href = "login.html";
     }
 }
 
+//check if someone is logged
 function checkLogin() {
     var user = getCookie("username");
     if (user != "") {
@@ -86,6 +92,7 @@ function deleteCookie(){
     document.location.href = "index.html";
 }
 
+//check if some is logged and change login link with a cute text
 function checkIfLogged() {
     if(checkLogin()){
         var loginLink = document.getElementById("login_link");
@@ -114,6 +121,7 @@ function getLiteralResHour(index) {
     }
 }
 
+//generate the reservation array based on resturant presents on site load
 function generateReservationArray() {
     //var retJson = {"reservations": []};
     var retJson = {"reservations": []};

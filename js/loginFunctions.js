@@ -30,11 +30,14 @@ function login() {
     var usersList = localStorage.getItem('usersList');
     var parsedJSONUsersList = JSON.parse(usersList);
 
-    while(parsedJSONUsersList.users.length >= i){
-        if(parsedJSONUsersList.users[i].email == email && parsedJSONUsersList.users[i].password == hashCode(password)){
+    var users = parsedJSONUsersList.users;
+
+    //search in the user list if there is a user that match the login form data 
+    while(users.length >= i){
+        if(users[i].email == email && users[i].password == hashCode(password)){
             console.log("TROVATA CORRISPONDENZA");
-            var nome = parsedJSONUsersList.users[i].name
-            var cog  = parsedJSONUsersList.users[i].surname
+            var nome = users[i].name
+            var cog  = users[i].surname
             var username = nome+" "+cog
             setLoginCookie(email, username,10);
 
