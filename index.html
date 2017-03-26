@@ -16,7 +16,7 @@
 
     <title>La Forchetta</title>
 </head>
-<body style="margin: 0" onload="loadUsersData();loadResturantsData();generatePolaroid(null);checkIfLogged();">
+<body style="margin: 0; background-image: url('data/main-background.jpg');" onload="loadUsersData();loadResturantsData();generatePolaroid(null);checkIfLogged();">
 
     <!-- NAVIGATION BAR -->
 
@@ -149,7 +149,7 @@
     <div class="modal" id="resturant_booking">
         <div class="modal-content animate">
             <div class="imgcontainer">
-                <span onclick="document.getElementById('resturant_booking').style.display='none'" class="close" title="Close Modal">&times;RESET</span>
+                <span onclick="document.getElementById('resturant_booking').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
             <div class="modal-title">
                 <h3 id="title"></h3> <!-- Nome ristorante -->
@@ -197,6 +197,8 @@
             <a href="chi_siamo.html">Chi siamo</a>
             <a href="index.html">Prenota</a>
             <a href="personal_area.html">Accedi area Clienti</a>
+        </div>
+        <div class="footer_copyright">La Forchetta 2017. Tutti i diritti sono riservati | Creato da Riccardo Pagano mat 873363
         </div>
     </div>
 </body>
