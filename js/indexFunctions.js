@@ -128,11 +128,11 @@ function showResturantDetail(nomeRistorante) {
     //show reservation
     var ul = document.createElement("ul");
     for(var k=0; k<7; k++){
+        //li.appendChild(document.createTextNode(getLiteralDay(k)+" -> 19:00 - 21:00 "+fascia0[k]+" posti liberi | dopo le 21:00 "+fascia1[k]+" posti liberi"));
         var li = document.createElement("li");
         var underUl = document.createElement("ul");
         var underLifo = document.createElement("li");
         var underLifi = document.createElement("li");
-        //li.appendChild(document.createTextNode(getLiteralDay(k)+" -> 19:00 - 21:00 "+fascia0[k]+" posti liberi | dopo le 21:00 "+fascia1[k]+" posti liberi"));
         li.appendChild(document.createTextNode(getLiteralDay(k)+":"));
         underLifo.appendChild(document.createTextNode("19:00 - 21:00 : "+fascia0[k]+" posti liberi"));
         underUl.appendChild(underLifo);

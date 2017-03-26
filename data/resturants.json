@@ -75,6 +75,116 @@
 						}]
 				}
 			]
+		},
+
+		{
+			"nome":"Tonys Dinner",
+			"tipologia":["hamburger","griglieria"],
+			"via": "via Della Liberazione, 255",
+			"citta":"Milano",
+			"gps":{"lat":45.4886181,"long":9.2237361},
+			"fascia_prezzo": "basso",
+			"review":4.7,
+			"posti":100,
+			"img": "data/img02.jpg",
+			"menus":[
+				{
+					"menu":"Menu Hamburger base",
+					"antipasti":["patatine","olive fritte"],
+					"primi":[],
+					"secondi":["Hamburger", "Cheeseburger"],
+					"allergeni":["Cereali contenenti glutine","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti"],
+					"bevande":["acqua","coca-cola"],
+					"prezzo":9.90,
+					"sconti":[{"tipo":"giorno",
+						"valore":["giovedì"],
+						"sconto":0.20
+					},
+						{"tipo":"orario",
+							"valore":["21-23"],
+							"sconto":0.1
+						}]
+				},
+				{
+					"menu":"Menu Hamburger PRO",
+					"antipasti":["patatine SUPER FRITTE","olive fritte"],
+					"primi":[],
+					"secondi":["DOPPIO Hamburger", "DOPPIO Cheeseburger"],
+					"allergeni":["Cereali contenenti glutine","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti"],
+					"bevande":["acqua","coca-cola", "Birra"],
+					"prezzo":12.99,
+					"sconti":[{"tipo":"giorno",
+						"valore":["giovedì"],
+						"sconto":0.20
+					},
+						{"tipo":"orario",
+							"valore":["21-23"],
+							"sconto":0.1
+						}]
+				}
+			]
+		},
+
+		{
+			"nome":"L Antica Pergola",
+			"tipologia":["pesce"],
+			"via": "via degli Astronauti 22",
+			"citta":"Legnano",
+			"gps":{"lat":45.4886181,"long":9.2237361},
+			"fascia_prezzo": "alto",
+			"review":5,
+			"posti":25,
+			"img": "data/img04.jpg",
+			"menus":[
+				{
+					"menu":"menu pesce",
+					"antipasti":["polipi con patate","affettato di pesce spada"],
+					"primi":["Taglioni all'astice","pennette salmone e panna","gnocchi di mandorle di mare"],
+					"secondi":["Filetto di pesce spada","trota iridea al cartoccio","tartare di salmone"],
+					"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
+					"bevande":["acqua","coca-cola","vino bianco"],
+					"prezzo":33.00,
+					"sconti":[{"tipo":"giorno",
+						"valore":["maertedì","venerdì"],
+						"sconto":0.20
+					},
+						{"tipo":"orario",
+							"valore":["21-23"],
+							"sconto":0.4
+						}]
+				}
+			]
+		},
+
+		{
+			"nome":"La filata di Nonna Maria",
+			"tipologia":["esotico", "cucina creativa", "vegano"],
+			"via": "via del verde 11",
+			"citta":"Genova",
+			"gps":{"lat":45.4886181,"long":9.2237361},
+			"fascia_prezzo": "alto",
+			"review":5,
+			"posti":42,
+			"img": "data/img03.jpg",
+			"menus":[
+				{
+					"menu":"menu vegan",
+					"antipasti":["insalatina triste","olive tristi", "pomodori della nonna"],
+					"primi":["Pastina con cime di rapa e salsa di mango","Pappa al pomodoro","SORPRESA DELLO CHEF","risotto con Idillio di tuberi"],
+					"secondi":["Manfrottino alle verdure verdi","tartare di peperoni","dolcezza di caprino senza latticini","hamburger di seitan"],
+					"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
+					"bevande":["acqua","the verde"],
+					"prezzo":43.00,
+					"sconti":[{"tipo":"giorno",
+						"valore":["maertedì","venerdì"],
+						"sconto":0.20
+					},
+						{"tipo":"orario",
+							"valore":["21-23"],
+							"sconto":0.4
+						}]
+				}
+			]
 		}
 	]
 }
