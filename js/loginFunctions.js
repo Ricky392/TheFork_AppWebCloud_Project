@@ -21,7 +21,7 @@ function checkLoginForm() {
         return false;
     }
 
-    login();
+    return login();
 }
 
 function login() {
@@ -32,8 +32,28 @@ function login() {
 
     var users = parsedJSONUsersList.users;
 
-    //search in the user list if there is a user that match the login form data 
-    while(users.length >= i){
+    //search in the user list if there is a user that match the login form data
+    var foundUser = users.filter(function (userItem){
+        return userItem.email === email && userItem.password === hashCode(password);
+    });
+
+    console.log("foundUser", foundUser);
+
+    if(foundUser[0] == undefined){
+        //not logged
+        alert("Credenziali di accesso non riconosciute");
+        return false;
+    } else{
+        //logged
+        var nome = foundUser[0].name
+        var cog  = foundUser[0].surname
+        var username = nome+" "+cog
+        setLoginCookie(email, username,10);
+        alert("Accesso effettuato");
+        return true;
+    }
+    //search in the user list if there is a user that match the login form data
+    /*while(users.length >= i){
         if(users[i].email == email && users[i].password == hashCode(password)){
             console.log("TROVATA CORRISPONDENZA");
             var nome = users[i].name
@@ -43,10 +63,12 @@ function login() {
 
             alert("Accesso effettuato");
             found = true;
+            return true;
         }
         i++;
     }
     if(found == false)
         alert("Username o password non riconosciuta");
-
+        return false;
+*/
 }

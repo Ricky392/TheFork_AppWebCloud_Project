@@ -237,7 +237,7 @@ function confirmPrenotation(restName) {
             "hour": hour,
             "seats": seats
         };
-        console.log(userItem[0].reservations);
+        console.log("res item from user",userItem[0].reservations);
         userItem[0].reservations.push(newReservation);
         localStorage.setItem('usersList', JSON.stringify(parsedJSONUsersList));
 

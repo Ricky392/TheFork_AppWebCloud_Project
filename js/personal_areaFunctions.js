@@ -101,8 +101,9 @@ function editUser() {
     for(i=0; i < parsedJSONUsersList.users.length; i++){
         if(parsedJSONUsersList.users[i].email == email){
             //possiamo modificare il nuovo utente
+            var reservations = parsedJSONUsersList.users[i].reservations;
             parsedJSONUsersList.users.splice(i, 1);
-            var newUser = {"name": name, "surname": surname, "email": email, "password": hashCode(password)};
+            var newUser = {"name": name, "surname": surname, "email": email, "password": hashCode(password), "reservations": reservations};
             console.log(newUser);
             parsedJSONUsersList.users.push(newUser);
             console.log(parsedJSONUsersList);
