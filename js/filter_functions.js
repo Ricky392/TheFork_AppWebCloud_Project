@@ -67,7 +67,7 @@ function searchWithFilters() {
 
     if(capienza != "Seleziona capienza ristorante"){
         resturants = resturants.filter(function (restItem) {
-            return restItem.posti < Number(capienza);
+            return restItem.posti <= Number(capienza);
         });
     }
 

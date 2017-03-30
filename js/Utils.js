@@ -38,6 +38,7 @@ function loadResturantsData() {
         if(localStorage.getItem('resturantsList') == null) {
             localStorage.setItem('resturantsList', JSON.stringify(data));
             generateReservationArray();
+            generatePolaroid();
         }
     }).catch(function() {
         console.log("Error");
