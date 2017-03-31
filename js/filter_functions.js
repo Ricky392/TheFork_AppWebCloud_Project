@@ -38,9 +38,8 @@ function searchWithFilters() {
     var tipo     = document.getElementById("filterTipo").innerHTML;
     var capienza = document.getElementById("filterCapienza").innerHTML;
 
-    var resturantsList = localStorage.getItem('resturantsList');
-    var parsedJSONResturantsList = JSON.parse(resturantsList);
-    var resturants = parsedJSONResturantsList.resturants;
+    var resturantsList = loadFromLocalStorage('resturantsList');
+    var resturants = resturantsList.resturants;
 
     if(citta != "Seleziona città"){
         resturants = resturants.filter(function (restItem) {

@@ -46,12 +46,12 @@ function checkRegistrationForm() {
 function registration() {
     var i=0;
     var found = false;
-    var usersList = localStorage.getItem('usersList');
-    var parsedJSONUsersList = JSON.parse(usersList);
+    var usersList = loadFromLocalStorage('usersList');
+    var users = usersList.users;
 
     //check if there is a user that already have an email equals to the new one
-    for(i=0; i < parsedJSONUsersList.users.length; i++){
-        if(parsedJSONUsersList.users[i].email == email){
+    for(i=0; i < users.length; i++){
+        if(users[i].email == email){
             found = true;
         }
     }
@@ -59,9 +59,9 @@ function registration() {
         //possiamo inserire il nuovo utente
         var newUser = {"name": name, "surname": surname, "email": email, "password": hashCode(password), reservations: []};
         console.log(newUser);
-        parsedJSONUsersList.users.push(newUser);
-        console.log(parsedJSONUsersList);
-        localStorage.setItem('usersList', JSON.stringify(parsedJSONUsersList));
+        users.push(newUser);
+        console.log(usersList);
+        writeInLocalStorage('usersList', parsedJSONUsersList);
     }
     else {
         //email già presente

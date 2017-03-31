@@ -13,19 +13,19 @@ function fetchUserData() {
 
     var i=0;
     var found = false;
-    var usersList = localStorage.getItem('usersList');
-    var parsedJSONUsersList = JSON.parse(usersList);
+    var usersList = loadFromLocalStorage('usersList');
+    var users = usersList.users;
 
-    while(parsedJSONUsersList.users.length >= i){
-        if(parsedJSONUsersList.users[i].email == getCookie("username")){
+    while(users.length >= i){
+        if(users[i].email == getCookie("username")){
             console.log("TROVATA CORRISPONDENZA");
-            name.innerHTML = "Nome: " + parsedJSONUsersList.users[i].name;
-            surname.innerHTML = "Cognome: " + parsedJSONUsersList.users[i].surname;
-            email.innerHTML = "Email di registrazione: " + parsedJSONUsersList.users[i].email;
-            reference_email = parsedJSONUsersList.users[i].email;
+            name.innerHTML = "Nome: " + users[i].name;
+            surname.innerHTML = "Cognome: " + users[i].surname;
+            email.innerHTML = "Email di registrazione: " + users[i].email;
+            reference_email = users[i].email;
             var li = document.createElement("li");
-            for(var j=0; j<parsedJSONUsersList.users[i].reservations.length;j++) {
-                var res = parsedJSONUsersList.users[i].reservations[j];
+            for(var j=0; j < users[i].reservations.length;j++) {
+                var res = users[i].reservations[j];
                 var li = document.createElement("li");
                 li.appendChild(document.createTextNode(res.resturant+", "+getLiteralDay(Number(res.day))+" alle "+getLiteralResHour(Number(res.hour))+" per "+res.seats+" persone;"));
                 reservationsUl.appendChild(li);
@@ -44,10 +44,9 @@ function fetchUserDataEditMode() {
 
     var i = 0;
     var found = false;
-    var usersList = localStorage.getItem('usersList');
-    var parsedJSONUsersList = JSON.parse(usersList);
+    var usersList = loadFromLocalStorage('usersList');
 
-    var users = parsedJSONUsersList.users;
+    var users = usersList.users;
 
     var user = users.filter(function (user) {
         return user.email === getCookie("username");
@@ -95,19 +94,19 @@ function checkEditingForm() {
 
 function editUser() {
     var i;
-    var usersList = localStorage.getItem('usersList');
-    var parsedJSONUsersList = JSON.parse(usersList);
+    var usersList = loadFromLocalStorage('usersList');
+    var users = usersList.users;
 
-    for(i=0; i < parsedJSONUsersList.users.length; i++){
-        if(parsedJSONUsersList.users[i].email == email){
+    for(i=0; i < users.length; i++){
+        if(users[i].email == email){
             //possiamo modificare il nuovo utente
-            var reservations = parsedJSONUsersList.users[i].reservations;
-            parsedJSONUsersList.users.splice(i, 1);
+            var reservations = users[i].reservations;
+            users.splice(i, 1);
             var newUser = {"name": name, "surname": surname, "email": email, "password": hashCode(password), "reservations": reservations};
             console.log(newUser);
-            parsedJSONUsersList.users.push(newUser);
-            console.log(parsedJSONUsersList);
-            localStorage.setItem('usersList', JSON.stringify(parsedJSONUsersList));
+            users.push(newUser);
+            console.log(usersList);
+            writeInLocalStorage('usersList', usersList);
             alert("Modifica effettuata con successo");
         }
     }
@@ -116,16 +115,17 @@ function editUser() {
 function deleteAccount() {
     if(confirm("Sei sicuro di voler cancellare il tuo account?")) {
         var i;
-        var usersList = localStorage.getItem('usersList');
-        var parsedJSONUsersList = JSON.parse(usersList);
+        var usersList = loadFromLocalStorage('usersList');
+        var users = usersList.users;
 
-        for (i = 0; i < parsedJSONUsersList.users.length; i++) {
+        for (i = 0; i < users.length; i++) {
             console.log(reference_email);
-            if (parsedJSONUsersList.users[i].email == reference_email) {
+            if (users[i].email == reference_email) {
                 //possiamo modificare il nuovo utente
                 console.log("trovato e pronto per eliminazione");
-                parsedJSONUsersList.users.splice(i, 1);
-                localStorage.setItem('usersList', JSON.stringify(parsedJSONUsersList));
+                users.splice(i, 1);
+
+                writeInLocalStorage('usersList', usersList);
                 deleteCookie();
             }
         }

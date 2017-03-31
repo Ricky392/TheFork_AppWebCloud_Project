@@ -11,9 +11,8 @@ function generatePolaroid(resturants) {
     var polaroids = document.getElementsByClassName("polaroid");
 
     if(resturants == null){
-        var resturantsList = localStorage.getItem('resturantsList');
-        var parsedJSONResturantsList = JSON.parse(resturantsList);
-        resturants = parsedJSONResturantsList.resturants;
+        var resturantList = loadFromLocalStorage('resturantsList');
+        resturants = resturantList.resturants;
 
     }
 
@@ -92,13 +91,11 @@ function clearPolaroids() {
 function showResturantDetail(nomeRistorante) {
 
     //lista prenotazioni
-    var reservationList = localStorage.getItem("reservationList");
-    var parsedJSONReservationlist = JSON.parse(reservationList);
-    var reservations = parsedJSONReservationlist.reservations;
+    var reservationList = loadFromLocalStorage('reservationList');
+    var reservations = reservationList.reservations;
 
-    var resturantsList = localStorage.getItem('resturantsList');
-    var parsedJSONResturantsList = JSON.parse(resturantsList);
-    resturants = parsedJSONResturantsList.resturants;
+    var resturantsList = loadFromLocalStorage('resturantsList');
+    resturants = resturantsList.resturants;
 
     var reservation_table = document.getElementById("resturant_reservations");
 
@@ -189,14 +186,12 @@ function confirmPrenotation(restName) {
     var isBookingPossible = false;
 
     //lista prenotazioni
-    var reservationList = localStorage.getItem("reservationList");
-    var parsedJSONReservationlist = JSON.parse(reservationList);
-    var reservations = parsedJSONReservationlist.reservations;
+    var reservationList = loadFromLocalStorage('reservationList');
+    var reservations = reservationList.reservations;
 
     //lista utenti
-    var usersList = localStorage.getItem("usersList");
-    var parsedJSONUsersList = JSON.parse(usersList);
-    var users = parsedJSONUsersList.users;
+    var usersList = loadFromLocalStorage('usersList');
+    var users = usersList.users;
 
     var confirmBtn = document.getElementById("confirmBtn");
     var seats = document.getElementById("reservation_seats").value;
@@ -225,7 +220,7 @@ function confirmPrenotation(restName) {
 
     }
     if(isBookingPossible){
-        localStorage.setItem('reservationList', JSON.stringify(parsedJSONReservationlist));
+        writeInLocalStorage('reservationList', reservationList);
 
         var userItem = users.filter(function (item) {
             return item.email === user.toString();
@@ -239,7 +234,7 @@ function confirmPrenotation(restName) {
         };
         console.log("res item from user",userItem[0].reservations);
         userItem[0].reservations.push(newReservation);
-        localStorage.setItem('usersList', JSON.stringify(parsedJSONUsersList));
+        writeInLocalStorage('usersList', usersList);
 
         alert("Grazie di aver prenotato con La Forchetta");
         document.getElementById("resturant_booking").style.display= "none";

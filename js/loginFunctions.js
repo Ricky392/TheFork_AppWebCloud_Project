@@ -27,10 +27,9 @@ function checkLoginForm() {
 function login() {
     var i=0;
     var found = false;
-    var usersList = localStorage.getItem('usersList');
-    var parsedJSONUsersList = JSON.parse(usersList);
-
-    var users = parsedJSONUsersList.users;
+    
+    var usersList = loadFromLocalStorage('usersList');
+    var users = usersList.users;
 
     //search in the user list if there is a user that match the login form data
     var foundUser = users.filter(function (userItem){
@@ -52,23 +51,4 @@ function login() {
         alert("Accesso effettuato");
         return true;
     }
-    //search in the user list if there is a user that match the login form data
-    /*while(users.length >= i){
-        if(users[i].email == email && users[i].password == hashCode(password)){
-            console.log("TROVATA CORRISPONDENZA");
-            var nome = users[i].name
-            var cog  = users[i].surname
-            var username = nome+" "+cog
-            setLoginCookie(email, username,10);
-
-            alert("Accesso effettuato");
-            found = true;
-            return true;
-        }
-        i++;
-    }
-    if(found == false)
-        alert("Username o password non riconosciuta");
-        return false;
-*/
 }

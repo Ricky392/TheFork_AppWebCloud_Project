@@ -139,3 +139,18 @@ function generateReservationArray() {
     }
     localStorage.setItem('reservationList', JSON.stringify(retJson));
 }
+
+function loadFromLocalStorage(itemName){
+    //itemName is the key string
+    var string = localStorage.getItem(itemName);
+    var parsedJSON = JSON.parse(string);
+
+    //return json obj
+    return parsedJSON;
+}
+
+function writeInLocalStorage(itemName, itemJSON){
+    //itemName is the key string for saving in localStorage
+    //itemJSON is the input JSON
+    localStorage.setItem(itemName, JSON.stringify(itemJSON));
+}
