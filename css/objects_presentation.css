@@ -241,6 +241,18 @@
     margin-bottom: 30px;
 }
 
+#resturant_menu_en{
+    display: none;
+}
+
+.lang{
+    cursor: pointer;
+}
+
+.lang_selector{
+    text-align: center;
+}
+
 @media only screen and (min-width: 768px) {
     /* For desktop: */
     .imgExpo{

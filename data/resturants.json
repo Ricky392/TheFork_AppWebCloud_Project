@@ -13,12 +13,12 @@
 			"menus":[
 				{
 					"menu":"menu pizza",
-					"antipasti":["patatine","olive fritte"],
+					"antipasti":["patatine ","olive fritte"],
 					"primi":[],
 					"secondi":["pizza a scelta"],
 					"dolci":[],
-					"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
-					"bevande":["acqua","coca-cola"],
+					"allergeni":["Cereali contenenti glutine ","Crostacei e prodotti a base di crostacei ","Pesce e prodotti a base di pesce ","Arachidi e prodotti a base di arachidi ","Soia e prodotti a base di soia ","Latte e prodotti a base di latte ","Frutta a guscio ","Sedano e prodotti a base di sedano ","Senape e prodotti a base di senape ","Semi di sesamo e prodotti a base di semi di sesamo ","Anidride solforosa e solfiti ","Lupini e prodotti a base di lupini ","Molluschi e prodotti a base di molluschi"],
+					"bevande":["acqua ","coca-cola"],
 					"prezzo":17.00,
 					"sconti":[{"tipo":"giorno",
 						"valore":["lunedì","giovedì"],
@@ -35,16 +35,51 @@
 					"primi":["risotto alla milanese"],
 					"secondi":["cotoletta alla milanese"],
 					"dolci":["barbajada"],
-					"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
-					"bevande":["acqua","coca-cola","caffe"],
+					"allergeni":["Cereali contenenti glutine ","Crostacei e prodotti a base di crostacei ","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini ","Molluschi e prodotti a base di molluschi"],
+					"bevande":["acqua ","coca-cola ","caffe"],
 					"prezzo":45.00,
 					"sconti":[{"tipo":"giorno",
 						"valore":["martedì","mercoledì"],
 						"sconto":0.50
 					}]
 				}
+			],
+			"menus_en":[
+				{
+					"menu":"menu pizza",
+					"antipasti":["chips ","fired olives"],
+					"primi":[],
+					"secondi":["a pizza"],
+					"dolci":[],
+					"allergeni":["Cereals containing gluten "," Crustaceans and products based on shellfish "," Fish and products based on fish "," Peanuts and peanut-based products "," Soy and soy-based products "," Milk and products milk"," nuts "," celery and products celery base "," mustard and mustard-based products"," sesame seeds and products made from sesame seed "," sulfur dioxide and sulphites "," lupine and products based on lupins"," mollusks and shellfish-based products "],
+					"bevande":["water","coca-cola"],
+					"prezzo":17.00,
+					"sconti":[{"tipo":"day",
+						"valore":["monday","Thursday"],
+						"sconto":0.20
+					},
+						{"tipo":"hour",
+							"valore":["19-21"],
+							"sconto":0.1
+						}]
+				},
+				{
+					"menu":"menu milanese",
+					"antipasti":["polentina with deer"],
+					"primi":["risotto milanese"],
+					"secondi":["cutlet alla milanese"],
+					"dolci":["barbajada"],
+					"allergeni":["Cereals containing gluten "," Crustaceans and products based on shellfish "," Fish and products based on fish "," Peanuts and peanut-based products "," Soy and soy-based products "," Milk and products milk"," nuts "," celery and products celery base "," mustard and mustard-based products"," sesame seeds and products made from sesame seed "," sulfur dioxide and sulphites "," lupine and products based on lupins"," mollusks and shellfish-based products "],
+					"bevande":["water","coke","cafe"],
+					"prezzo":45.00,
+					"sconti":[{"tipo":"day",
+						"valore":["Tusday","Wensday"],
+						"sconto":0.50
+					}]
+				}
 			]
 		},
+
 
 		{
 			"nome":"La Conchiglia",
@@ -59,17 +94,38 @@
 			"menus":[
 				{
 					"menu":"menu pizza",
-					"antipasti":["patatine","olive fritte"],
+					"antipasti":["patatine ","olive fritte"],
 					"primi":[],
 					"secondi":["pizza a scelta"],
-					"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
-					"bevande":["acqua","coca-cola"],
+					"dolci": [],
+					"allergeni":["Cereali contenenti glutine ","Crostacei e prodotti a base di crostacei ","Pesce e prodotti a base di pesce ","Arachidi e prodotti a base di arachidi ","Soia e prodotti a base di soia ","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
+					"bevande":["acqua ","coca-cola"],
 					"prezzo":13.00,
 					"sconti":[{"tipo":"giorno",
 						"valore":["maertedì","venerdì"],
 						"sconto":0.20
 					},
 						{"tipo":"orario",
+							"valore":["21-23"],
+							"sconto":0.4
+						}]
+				}
+			],
+			"menus_en":[
+				{
+					"menu":"menu pizza",
+					"antipasti":["Chips ","fired olives"],
+					"primi":[],
+					"secondi":["A pizza"],
+					"dolci": [],
+					"allergeni":["Cereals containing gluten "," Crustaceans and products based on shellfish "," Fish and products based on fish "," Peanuts and peanut-based products "," Soy and soy-based products "," Milk and products milk"," nuts "," celery and products celery base "," mustard and mustard-based products"," sesame seeds and products made from sesame seed "," sulfur dioxide and sulphites "," lupine and products based on lupins"," mollusks and shellfish-based products "],
+					"bevande":["water ","coke"],
+					"prezzo":13.00,
+					"sconti":[{"tipo":"day",
+						"valore":["thusday","friday"],
+						"sconto":0.20
+					},
+						{"tipo":"hour",
 							"valore":["21-23"],
 							"sconto":0.4
 						}]
@@ -90,11 +146,12 @@
 			"menus":[
 				{
 					"menu":"Menu Hamburger base",
-					"antipasti":["patatine","olive fritte"],
+					"antipasti":["patatine ","olive fritte"],
 					"primi":[],
-					"secondi":["Hamburger", "Cheeseburger"],
-					"allergeni":["Cereali contenenti glutine","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti"],
-					"bevande":["acqua","coca-cola"],
+					"secondi":["Hamburger ", "Cheeseburger"],
+					"dolci": [],
+					"allergeni":["Cereali contenenti glutine ","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti"],
+					"bevande":["acqua ","coca-cola"],
 					"prezzo":9.90,
 					"sconti":[{"tipo":"giorno",
 						"valore":["giovedì"],
@@ -107,17 +164,56 @@
 				},
 				{
 					"menu":"Menu Hamburger PRO",
-					"antipasti":["patatine SUPER FRITTE","olive fritte"],
+					"antipasti":["patatine SUPER FRITTE ","olive fritte"],
 					"primi":[],
-					"secondi":["DOPPIO Hamburger", "DOPPIO Cheeseburger"],
-					"allergeni":["Cereali contenenti glutine","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti"],
-					"bevande":["acqua","coca-cola", "Birra"],
+					"secondi":["DOPPIO Hamburger ", "DOPPIO Cheeseburger"],
+					"dolci": [],
+					"allergeni":["Cereali contenenti glutine ","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti"],
+					"bevande":["acqua ","coca-cola ", "Birra"],
 					"prezzo":12.99,
 					"sconti":[{"tipo":"giorno",
 						"valore":["giovedì"],
 						"sconto":0.20
 					},
 						{"tipo":"orario",
+							"valore":["21-23"],
+							"sconto":0.1
+						}]
+				}
+			],
+			"menus_en":[
+				{
+					"menu":"Menu Hamburger STARTER",
+					"antipasti":["Chips ","fired olives"],
+					"primi":[],
+					"secondi":["Hamburger ", "Cheeseburger"],
+					"dolci": [],
+					"allergeni":["Cereals containing gluten "," Crustaceans and products based on shellfish "," Fish and products based on fish "," Peanuts and peanut-based products "," Soy and soy-based products "," Milk and products milk"," nuts "," celery and products celery base "," mustard and mustard-based products"," sesame seeds and products made from sesame seed "," sulfur dioxide and sulphites "," lupine and products based on lupins"," mollusks and shellfish-based products "],
+					"bevande":["water ","coke"],
+					"prezzo":9.90,
+					"sconti":[{"tipo":"day",
+						"valore":["Thursday"],
+						"sconto":0.20
+					},
+						{"tipo":"hour",
+							"valore":["21-23"],
+							"sconto":0.1
+						}]
+				},
+				{
+					"menu":"Menu Hamburger PRO",
+					"antipasti":["SUPER FIRED chips ","fried olives"],
+					"primi":[],
+					"secondi":["DOUBLE Hamburger ", "DOUBLE Cheeseburger"],
+					"dolci": [],
+					"allergeni":["Cereals containing gluten "," Crustaceans and products based on shellfish "," Fish and products based on fish "," Peanuts and peanut-based products "," Soy and soy-based products "," Milk and products milk"," nuts "," celery and products celery base "," mustard and mustard-based products"," sesame seeds and products made from sesame seed "," sulfur dioxide and sulphites "," lupine and products based on lupins"," mollusks and shellfish-based products "],
+					"bevande":["water ","Coke ", "Bier"],
+					"prezzo":12.99,
+					"sconti":[{"tipo":"day",
+						"valore":["Thursday"],
+						"sconto":0.20
+					},
+						{"tipo":"hour",
 							"valore":["21-23"],
 							"sconto":0.1
 						}]
@@ -138,17 +234,38 @@
 			"menus":[
 				{
 					"menu":"menu pesce",
-					"antipasti":["polipi con patate","affettato di pesce spada"],
-					"primi":["Taglioni all'astice","pennette salmone e panna","gnocchi di mandorle di mare"],
-					"secondi":["Filetto di pesce spada","trota iridea al cartoccio","tartare di salmone"],
-					"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
-					"bevande":["acqua","coca-cola","vino bianco"],
+					"antipasti":["polipi con patate ","affettato di pesce spada"],
+					"primi":["Taglioni all'astice ","pennette salmone e panna ","gnocchi di mandorle di mare"],
+					"secondi":["Filetto di pesce spada ","trota iridea al cartoccio ","tartare di salmone"],
+					"dolci": [],
+					"allergeni":["Cereali contenenti glutine ","Crostacei e prodotti a base di crostacei ","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
+					"bevande":["acqua ","coca-cola ","vino bianco"],
 					"prezzo":33.00,
 					"sconti":[{"tipo":"giorno",
 						"valore":["maertedì","venerdì"],
 						"sconto":0.20
 					},
 						{"tipo":"orario",
+							"valore":["21-23"],
+							"sconto":0.4
+						}]
+				}
+			],
+			"menus_en":[
+				{
+					"menu":"menu fish",
+					"antipasti":["Octopus with potatoes ", "sliced ​​swordfish"],
+					"primi":["Taglioni Lobster ","penne salmon and cream ","gnocchi of sea almond"],
+					"secondi":["Swordfish fillet ","rainbow trout in foil ", "salmon tartare"],
+					"dolci": [],
+					"allergeni":["Cereals containing gluten "," Crustaceans and products based on shellfish "," Fish and products based on fish "," Peanuts and peanut-based products "," Soy and soy-based products "," Milk and products milk"," nuts "," celery and products celery base "," mustard and mustard-based products"," sesame seeds and products made from sesame seed "," sulfur dioxide and sulphites "," lupine and products based on lupins"," mollusks and shellfish-based products "],
+					"bevande":["water ","coke ","white wine"],
+					"prezzo":33.00,
+					"sconti":[{"tipo":"day",
+						"valore":["thusday","friday"],
+						"sconto":0.20
+					},
+						{"tipo":"hour",
 							"valore":["21-23"],
 							"sconto":0.4
 						}]
@@ -169,17 +286,38 @@
 			"menus":[
 				{
 					"menu":"menu vegan",
-					"antipasti":["insalatina triste","olive tristi", "pomodori della nonna"],
-					"primi":["Pastina con cime di rapa e salsa di mango","Pappa al pomodoro","SORPRESA DELLO CHEF","risotto con Idillio di tuberi"],
-					"secondi":["Manfrottino alle verdure verdi","tartare di peperoni","dolcezza di caprino senza latticini","hamburger di seitan"],
-					"allergeni":["Cereali contenenti glutine","Crostacei e prodotti a base di crostacei","Pesce e prodotti a base di pesce","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
-					"bevande":["acqua","the verde"],
+					"antipasti":["insalatina triste ","olive tristi ", "pomodori della nonna"],
+					"primi":["Pastina con cime di rapa e salsa di mango ","Pappa al pomodoro ","SORPRESA DELLO CHEF ","risotto con Idillio di tuberi"],
+					"secondi":["Manfrottino alle verdure verdi ","tartare di peperoni ","dolcezza di caprino senza latticini ","hamburger di seitan"],
+					"dolci": [],
+					"allergeni":["Cereali contenenti glutine ","Crostacei e prodotti a base di crostacei ","Pesce e prodotti a base di pesce ","Arachidi e prodotti a base di arachidi","Soia e prodotti a base di soia","Latte e prodotti a base di latte","Frutta a guscio","Sedano e prodotti a base di sedano","Senape e prodotti a base di senape","Semi di sesamo e prodotti a base di semi di sesamo","Anidride solforosa e solfiti","Lupini e prodotti a base di lupini","Molluschi e prodotti a base di molluschi"],
+					"bevande":["acqua ","the verde"],
 					"prezzo":43.00,
 					"sconti":[{"tipo":"giorno",
 						"valore":["maertedì","venerdì"],
 						"sconto":0.20
 					},
 						{"tipo":"orario",
+							"valore":["21-23"],
+							"sconto":0.4
+						}]
+				}
+			],
+			"menus_en":[
+				{
+					"menu":"menu vegan",
+					"antipasti":["Salad sad ", "sad olives ", "Tomatoes Grandma"],
+					"primi":["Pastina with turnip greens and mango sauce ", "Pappa al pomodoro ", "SURPRISE CHEF ", "risotto with Idyllic of tubers"],
+					"secondi":["Manfrottino green vegetables ", "tartare of peppers ", "sweet goat dairy-free ", "seitan burgers"],
+					"dolci": [],
+					"allergeni":["Cereals containing gluten "," Crustaceans and products based on shellfish "," Fish and products based on fish "," Peanuts and peanut-based products "," Soy and soy-based products "," Milk and products milk"," nuts "," celery and products celery base "," mustard and mustard-based products"," sesame seeds and products made from sesame seed "," sulfur dioxide and sulphites "," lupine and products based on lupins"," mollusks and shellfish-based products "],
+					"bevande":["water","green tè"],
+					"prezzo":43.00,
+					"sconti":[{"tipo":"day",
+						"valore":["thusday","friday"],
+						"sconto":0.20
+					},
+						{"tipo":"hour",
 							"valore":["21-23"],
 							"sconto":0.4
 						}]

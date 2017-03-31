@@ -42,42 +42,6 @@ function generatePolaroid(resturants) {
     }
 }
 
-
-//generate menu into the resturant description
-function getMenu(j, resturant, menu){
-    console.log("j", j, resturant.menus[j].menu);
-    var index = Number(j)+1;
-    menu.innerHTML = menu.innerHTML+index+". "+"<i>"+resturant.menus[j].menu+"</i>: ";
-    var ul = document.createElement("ul");
-    ul.setAttribute("id", "menu"+j);
-    var antipasti = document.createElement("li");
-    var primi = document.createElement("li");
-    var secondi = document.createElement("li");
-    var dolci = document.createElement("li");
-    var allergeni = document.createElement("li");
-    var bevande = document.createElement("li");
-    var prezzo = document.createElement("li");
-    var sconti = document.createElement("ul");
-
-    antipasti.appendChild(document.createTextNode("Antipasti: "+resturant.menus[j].antipasti));
-    primi.appendChild(document.createTextNode("Primi: "+resturant.menus[j].primi));
-    secondi.appendChild(document.createTextNode("Secondi: "+resturant.menus[j].secondi));
-    dolci.appendChild(document.createTextNode("Dolci: "+resturant.menus[j].dolci));
-    bevande.appendChild(document.createTextNode("Bevande: "+resturant.menus[j].bevande));
-    allergeni.appendChild(document.createTextNode("*Allergeni: "+resturant.menus[j].allergeni));
-    prezzo.appendChild(document.createTextNode("Prezzo: "+resturant.menus[j].prezzo+" €"));
-
-    ul.appendChild(antipasti.cloneNode(true));
-    ul.appendChild(primi.cloneNode(true));
-    ul.appendChild(secondi.cloneNode(true));
-    ul.appendChild(dolci.cloneNode(true));
-    ul.appendChild(bevande.cloneNode(true));
-    ul.appendChild(prezzo.cloneNode(true));
-    ul.appendChild(allergeni.cloneNode(true));
-
-    document.getElementById("resturant_menu").appendChild(ul);
-}
-
 //delete polaroid
 function clearPolaroids() {
     var template = document.querySelector('#polaroid_template');
@@ -105,7 +69,8 @@ function showResturantDetail(nomeRistorante) {
     var position = document.getElementById("resturant_position");
     var price = document.getElementById("resturant_price");
     var vacancy = document.getElementById("resturant_vacancy");
-    var menu = document.getElementById("resturant_menu");
+    var menu_it = document.getElementById("resturant_menu_it");
+    var menu_en = document.getElementById("resturant_menu_en");
     var booking_section = document.getElementById("booking_section");
 
     console.log(nomeRistorante);
@@ -153,12 +118,73 @@ function showResturantDetail(nomeRistorante) {
     position.innerHTML = "<strong>DOVE: </strong>"+resturant.via+", "+resturant.citta;
     price.innerHTML = "<strong>€€€: </strong>"+resturant.fascia_prezzo;
     vacancy.innerHTML = "<strong>CAPIENZA: </strong>"+resturant.posti;
-    menu.innerHTML = "<strong>MENUs: </strong><br/><br/>";
-    //while (resturant.menus[j] != undefined) {
-    //while(j < resturant.menus.length){
+    menu_en.innerHTML = "<strong>(ENG) MENUs: </strong><br/><br/>";
+    menu_it.innerHTML = "<strong>(ITA) MENUs: </strong><br/><br/>";
+
     for(var j in resturant.menus){
         console.log(j);
-        getMenu(j, resturant, menu);
+        getMenu(j, resturant, menu_en);
+        getMenu(j, resturant, menu_it);
+    }
+}
+
+//generate menu into the resturant description
+function getMenu(j, resturant, menu){
+
+    console.log("j", j, resturant.menus[j].menu);
+    var index = Number(j)+1;
+    menu.innerHTML = menu.innerHTML+index+". "+"<i>"+resturant.menus[j].menu+"</i>: ";
+    var ul = document.createElement("ul");
+    ul.setAttribute("id", "menu"+j);
+    var antipasti = document.createElement("li");
+    var primi = document.createElement("li");
+    var secondi = document.createElement("li");
+    var dolci = document.createElement("li");
+    var allergeni = document.createElement("li");
+    var bevande = document.createElement("li");
+    var prezzo = document.createElement("li");
+    var sconti = document.createElement("ul");
+
+    if(menu.getAttribute('id') === "resturant_menu_it"){
+
+        antipasti.appendChild(document.createTextNode("Antipasti: "+resturant.menus[j].antipasti));
+        primi.appendChild(document.createTextNode("Primi: "+resturant.menus[j].primi));
+        secondi.appendChild(document.createTextNode("Secondi: "+resturant.menus[j].secondi));
+        dolci.appendChild(document.createTextNode("Dolci: "+resturant.menus[j].dolci));
+        bevande.appendChild(document.createTextNode("Bevande: "+resturant.menus[j].bevande));
+        allergeni.appendChild(document.createTextNode("*Allergeni: "+resturant.menus[j].allergeni));
+        prezzo.appendChild(document.createTextNode("Prezzo: "+resturant.menus[j].prezzo+" €"));
+
+        ul.appendChild(antipasti.cloneNode(true));
+        ul.appendChild(primi.cloneNode(true));
+        ul.appendChild(secondi.cloneNode(true));
+        ul.appendChild(dolci.cloneNode(true));
+        ul.appendChild(bevande.cloneNode(true));
+        ul.appendChild(prezzo.cloneNode(true));
+        ul.appendChild(allergeni.cloneNode(true));
+
+        document.getElementById("resturant_menu_it").appendChild(ul);
+
+    }
+    else{
+        
+        antipasti.appendChild(document.createTextNode("Pre-dinner: "+resturant.menus_en[j].antipasti));
+        primi.appendChild(document.createTextNode("First course: "+resturant.menus_en[j].primi));
+        secondi.appendChild(document.createTextNode("Second course: "+resturant.menus_en[j].secondi));
+        dolci.appendChild(document.createTextNode("Dessert: "+resturant.menus_en[j].dolci));
+        bevande.appendChild(document.createTextNode("Beverages: "+resturant.menus_en[j].bevande));
+        allergeni.appendChild(document.createTextNode("Allergenes: "+resturant.menus_en[j].allergeni));
+        prezzo.appendChild(document.createTextNode("Price: "+resturant.menus_en[j].prezzo+" €"));
+
+        ul.appendChild(antipasti.cloneNode(true));
+        ul.appendChild(primi.cloneNode(true));
+        ul.appendChild(secondi.cloneNode(true));
+        ul.appendChild(dolci.cloneNode(true));
+        ul.appendChild(bevande.cloneNode(true));
+        ul.appendChild(prezzo.cloneNode(true));
+        ul.appendChild(allergeni.cloneNode(true));
+
+        document.getElementById("resturant_menu_en").appendChild(ul);
     }
 }
 
@@ -241,5 +267,16 @@ function confirmPrenotation(restName) {
     } else{
       //non è possibile prenotare quindi stoppo l'utente
       alert("Ci dispiace, il numero di posti da te richiesti non è disponibile");
+    }
+}
+
+function changeLang(lang){
+    if(lang == 'en'){
+        document.getElementById('resturant_menu_en').style.display = 'block';
+        document.getElementById('resturant_menu_it').style.display = 'none';
+    }
+    else if(lang == 'it'){
+        document.getElementById('resturant_menu_en').style.display = 'none';
+        document.getElementById('resturant_menu_it').style.display = 'block';
     }
 }
