@@ -107,6 +107,9 @@ function editUser() {
             users.push(newUser);
             console.log(usersList);
             writeInLocalStorage('usersList', usersList);
+            //edit cookie
+            deleteCookie();
+            setLoginCookie(email, name+" "+surname,10);
             alert("Modifica effettuata con successo");
         }
     }

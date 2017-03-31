@@ -44,6 +44,7 @@ function checkRegistrationForm() {
 
 //do registration
 function registration() {
+    console.log('entrato in registration');
     var i=0;
     var found = false;
     var usersList = loadFromLocalStorage('usersList');
@@ -53,6 +54,7 @@ function registration() {
     for(i=0; i < users.length; i++){
         if(users[i].email == email){
             found = true;
+            console.log('utente già registrato');
         }
     }
     if(!found){
@@ -61,7 +63,9 @@ function registration() {
         console.log(newUser);
         users.push(newUser);
         console.log(usersList);
-        writeInLocalStorage('usersList', parsedJSONUsersList);
+        writeInLocalStorage('usersList', usersList);
+        alert("Registrazione della tua utenza completata con successo!");
+        return true;
     }
     else {
         //email già presente

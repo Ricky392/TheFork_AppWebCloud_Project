@@ -56,12 +56,18 @@ function setLoginCookie(email, name, expirationDays) {
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
+    //cerca tra i cookie estratti
     for(var i = 0; i < ca.length; i++) {
         var c = ca[i];
+        //pulizia del cookie da eventuali spazi vuoti
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
         }
+        //stringa pulita,
         if (c.indexOf(name) == 0) {
+            //se ritorna zero, significa che la prima parte della stringa
+            //corrisponde con la chiave + "uguale"
+            //estraggo quindi il valore del cookie
             return c.substring(name.length, c.length);
         }
     }

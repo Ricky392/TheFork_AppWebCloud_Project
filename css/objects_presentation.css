@@ -73,6 +73,10 @@
 .dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
 }
+
+.resetbtn:hover, .resetbtn:focus{
+    background-color: #ac4f4f;
+}
 .searchInput {
     border-box: box-sizing;
     background-position: 14px 12px;
