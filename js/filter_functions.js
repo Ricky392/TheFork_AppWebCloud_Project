@@ -90,7 +90,7 @@ function resetFilters(){
 
 }
 
-function setFilterButton(filterParameter, filtertype, id) {
+function setFilterButton(filterParameter, filtertype,id) {
         var filterButton = document.getElementById(filtertype);
         filterButton.innerHTML = filterParameter;
         document.getElementById(id).classList.remove("show");
